@@ -21,6 +21,14 @@
   .nota{color:var(--gris);font-size:12.5px;margin:6px 0 14px}
   .leyenda{color:var(--gris);font-size:12px;margin:14px 0 0}
 
+  .chips{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:0 0 12px}
+  .chip{border:1px solid var(--linea);background:var(--fondo);color:var(--gris);
+    border-radius:20px;padding:4px 11px;font-size:12px;cursor:pointer;font-family:inherit}
+  .chip:hover{border-color:#bbb}
+  .chip.on{background:#eaf2fa;border-color:var(--azul);color:var(--azul);font-weight:600}
+  .chip.preset{border-style:dashed;color:var(--tinta)}
+  .chips .sep{width:1px;height:20px;background:var(--linea);margin:0 4px}
+  .chips .t{font-size:12px;color:#999;margin-right:2px}
   .scroll{overflow-x:auto;border:1px solid var(--linea);border-radius:6px}
   table{border-collapse:separate;border-spacing:0;font-size:12.5px;min-width:100%}
   th,td{padding:8px 10px;text-align:right;border-bottom:1px solid var(--linea);white-space:nowrap}
@@ -101,8 +109,9 @@
 <div class="wrap">
 
 <h1>Pick-ups chicas en Chile</h1>
-<p class="sub">Las nueve pick-ups son doble cabina; los tres autos de referencia van marcados. Tabla completa: dimensiones, precios y los cinco componentes del costo a 5 años, modelo por modelo. Haz clic en cualquier encabezado para ordenar; la primera columna queda fija al desplazar. La columna <b>TOTAL 5 años</b>, fija en el borde derecho, es la suma de combustible + permiso + seguro + mantención + depreciación: el costo real de tener el vehículo. Supuestos: 10.000 km al año, bencina 93 a $1.497/L, luz de casa $160/kWh.</p>
+<p class="sub">Las nueve pick-ups son doble cabina; los tres autos de referencia van marcados. Tabla completa: dimensiones, precios y los cinco componentes del costo a 5 años, modelo por modelo. Apaga las columnas que no te sirvan con los botones de arriba — tu elección queda guardada en este navegador. Haz clic en cualquier encabezado para ordenar; la primera columna queda fija al desplazar. La columna <b>TOTAL 5 años</b>, fija en el borde derecho, es la suma de combustible + permiso + seguro + mantención + depreciación: el costo real de tener el vehículo. Supuestos: 10.000 km al año, bencina 93 a $1.497/L, luz de casa $160/kWh.</p>
 
+<div class="chips" id="chips"></div>
 <div class="scroll"><table id="tabla"><thead><tr></tr></thead><tbody></tbody></table></div>
 
 <div class="cajas" id="cajas"></div>
@@ -228,33 +237,63 @@ function celdaSilueta(a){
     '<div class="extra' + (dl > 0 ? '' : ' cero') + '">' + txt + '</div>';
 }
 
-(function(){
-  const thead = document.querySelector('#tabla thead tr');
-  COLS.forEach(c => thead.insertAdjacentHTML('beforeend',
-    '<th class="'+(c.cls||'')+(c.g?' grupo':'')+'">'+c.t+(c.sub?'<small>'+c.sub+'</small>':'')+'</th>'));
-  const tbody = document.querySelector('#tabla tbody');
-  AUTOS.forEach(a => {
-    const tds = COLS.map(c => '<td class="'+(c.cls||'')+(c.g?' grupo':'')+'">'+c.r(a)+'</td>').join('');
-    tbody.insertAdjacentHTML('beforeend', '<tr class="'+a.cls+'">'+tds+'</tr>');
-  });
+const LLAVE = 'pickups-cols';
+let vis = COLS.map(() => true);
+try { const g = JSON.parse(localStorage.getItem(LLAVE)); if (Array.isArray(g) && g.length === COLS.length) vis = g; } catch(e){}
+let sortCol = null, asc = true;
 
-  const ths = document.querySelectorAll('#tabla thead th');
-  let act = -1, asc = true;
-  ths.forEach((th,i) => th.addEventListener('click', () => {
-    asc = (act === i) ? !asc : true; act = i;
-    ths.forEach(x => x.classList.remove('asc','desc'));
-    th.classList.add(asc ? 'asc' : 'desc');
-    const orden = AUTOS.slice().sort((x,y) => {
-      const a = COLS[i].v(x), b = COLS[i].v(y);
-      return a < b ? (asc?-1:1) : a > b ? (asc?1:-1) : 0;
-    });
-    tbody.innerHTML = '';
-    orden.forEach(a => {
-      const tds = COLS.map(c => '<td class="'+(c.cls||'')+(c.g?' grupo':'')+'">'+c.r(a)+'</td>').join('');
-      tbody.insertAdjacentHTML('beforeend', '<tr class="'+a.cls+'">'+tds+'</tr>');
-    });
+const PRESETS = {
+  'Todo':        () => COLS.map(() => true),
+  'Lo esencial': () => COLS.map((c,i) => [0,1,2,3,4,9,17,20].includes(i)),
+  'Solo tamaño': () => COLS.map((c,i) => i <= 6 || i === 20),
+  'Solo costos': () => COLS.map((c,i) => i === 0 || (i >= 8 && i <= 20))
+};
+
+function guardar(){ try { localStorage.setItem(LLAVE, JSON.stringify(vis)); } catch(e){} }
+
+function filaHTML(a){
+  return '<tr class="'+a.cls+'">' + COLS.map((c,i) => vis[i]
+    ? '<td class="'+(c.cls||'')+(c.g?' grupo':'')+'">'+c.r(a)+'</td>' : '').join('') + '</tr>';
+}
+
+function render(){
+  const thead = document.querySelector('#tabla thead tr');
+  thead.innerHTML = COLS.map((c,i) => vis[i]
+    ? '<th data-i="'+i+'" class="'+(c.cls||'')+(c.g?' grupo':'')+(sortCol===i?(asc?' asc':' desc'):'')+'">' +
+      c.t + (c.sub ? '<small>'+c.sub+'</small>' : '') + '</th>' : '').join('');
+
+  let lista = AUTOS.slice();
+  if (sortCol !== null) lista.sort((x,y) => {
+    const a = COLS[sortCol].v(x), b = COLS[sortCol].v(y);
+    return a < b ? (asc?-1:1) : a > b ? (asc?1:-1) : 0;
+  });
+  document.querySelector('#tabla tbody').innerHTML = lista.map(filaHTML).join('');
+
+  thead.querySelectorAll('th').forEach(th => th.addEventListener('click', () => {
+    const i = +th.dataset.i;
+    asc = (sortCol === i) ? !asc : true; sortCol = i; render();
   }));
-})();
+}
+
+function renderChips(){
+  const c = document.getElementById('chips');
+  c.innerHTML = '<span class="t">Columnas:</span>' +
+    Object.keys(PRESETS).map(p => '<button class="chip preset" data-p="'+p+'">'+p+'</button>').join('') +
+    '<span class="sep"></span>' +
+    COLS.map((col,i) => i === 0 ? '' :
+      '<button class="chip'+(vis[i]?' on':'')+'" data-c="'+i+'">'+col.t+(col.sub && col.t.indexOf('$/100')===0 ? ' '+col.sub : '')+'</button>').join('');
+
+  c.querySelectorAll('[data-c]').forEach(b => b.addEventListener('click', () => {
+    const i = +b.dataset.c;
+    if (vis[i] && vis.filter(Boolean).length <= 2) return;
+    vis[i] = !vis[i]; guardar(); render(); renderChips();
+  }));
+  c.querySelectorAll('[data-p]').forEach(b => b.addEventListener('click', () => {
+    vis = PRESETS[b.dataset.p](); guardar(); render(); renderChips();
+  }));
+}
+
+render(); renderChips();
 
 /* ---------- cajas ---------- */
 (function(){
