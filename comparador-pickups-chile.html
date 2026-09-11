@@ -101,7 +101,7 @@
 <div class="wrap">
 
 <h1>Pick-ups chicas en Chile</h1>
-<p class="sub">Tabla completa: dimensiones, precios y los cinco componentes del costo a 5 años, modelo por modelo. Haz clic en cualquier encabezado para ordenar; la primera columna queda fija al desplazar. La columna <b>TOTAL 5 años</b>, fija en el borde derecho, es la suma de combustible + permiso + seguro + mantención + depreciación: el costo real de tener el vehículo. Supuestos: 10.000 km al año, bencina 93 a $1.497/L, luz de casa $160/kWh.</p>
+<p class="sub">Las nueve pick-ups son doble cabina; los tres autos de referencia van marcados. Tabla completa: dimensiones, precios y los cinco componentes del costo a 5 años, modelo por modelo. Haz clic en cualquier encabezado para ordenar; la primera columna queda fija al desplazar. La columna <b>TOTAL 5 años</b>, fija en el borde derecho, es la suma de combustible + permiso + seguro + mantención + depreciación: el costo real de tener el vehículo. Supuestos: 10.000 km al año, bencina 93 a $1.497/L, luz de casa $160/kWh.</p>
 
 <div class="scroll"><table id="tabla"><thead><tr></tr></thead><tbody></tbody></table></div>
 
@@ -191,6 +191,8 @@ function svgPerfil(forma, L, H, WB, s){
 /* ---------- tabla ---------- */
 const COLS = [
   {t:'Modelo', cls:'txt pin', v:a=>a.n, r:a=>celdaModelo(a)},
+  {t:'Cabina', sub:'carrocería', cls:'txt', v:a=>a.forma,
+   r:a=>({pickup:'<b>Doble</b>',suv:'SUV',hatch:'Hatchback',sedan:'Sedán'})[a.forma]},
   {t:'Silueta', sub:'vs RAM 700', cls:'txt', v:a=>a.L, r:a=>celdaSilueta(a)},
   {t:'Largo', sub:'m', v:a=>a.L, r:a=>m2(a.L)},
   {t:'Ancho', sub:'m', v:a=>a.A, r:a=>m2(a.A)},
