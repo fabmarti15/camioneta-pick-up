@@ -49,6 +49,13 @@
   .fantasma{fill:none;stroke:#1a1a1a;stroke-width:1.2;stroke-dasharray:4 3;opacity:.55}
   tr.ref .cuerpo,.fila.r .cuerpo{fill:#b8c7d4}
   tr.ref .rueda,.fila.r .rueda{fill:#8a97a2}
+  tr.mia{background:#f0faf4}
+  tr.mia:hover{background:#e6f6ec}
+  tr.mia td:first-child::after{content:" · la tuya hoy";font-size:11px;color:#2f855a;font-weight:600}
+  tr.mia .cuerpo,.fila.m .cuerpo{fill:#8fd3a8}
+  tr.mia .rueda,.fila.m .rueda{fill:#5a8f6f}
+  .fila.m .b{background:#8fd3a8}
+  .fila.m .n{color:#2f855a;font-weight:600}
   .extra{font-size:11.5px;color:var(--rojo);margin-left:6px}
   .extra.cero{color:var(--gris)}
 
@@ -70,6 +77,7 @@
   .planta .est{fill:#fafafa;stroke:#ccc;stroke-dasharray:4 3}
   .planta .auto{fill:#2b6cb0;opacity:.85}
   .planta .autoref{fill:#b8c7d4}
+  .planta .automia{fill:#8fd3a8}
   .planta .sobra{fill:#c53030}
 
   .cajas{display:flex;gap:16px;flex-wrap:wrap;margin:18px 0 0}
@@ -158,6 +166,30 @@
       <td data-v="3360" class="ok">3.360</td>
       <td data-v="40677283" class="mal">40.677.000</td><td data-v="677955">677.955</td>
     </tr>
+    <tr>
+      <td class="modelo">Maxus T90 EV<span>100% eléctrica · 88,5 kWh · 471 km NEDC (~330 reales)</span></td>
+      <td class="sil" data-forma="pickup" data-l="5.365" data-h="1.809" data-wb="3.155"></td>
+      <td data-v="5.365">5,37</td><td data-v="1.998">2,00</td><td data-v="1.809">1,81</td><td data-v="0">—</td>
+      <td data-v="33308100">33.308.100</td>
+      <td data-v="4288" class="ok">4.288</td>
+      <td data-v="27677472">27.677.000</td><td data-v="461291">461.291</td>
+    </tr>
+    <tr>
+      <td class="modelo">JAC T9 EV AWD Advance<span>100% eléctrica 4×4 · 88 kWh · 317 km WLTP</span></td>
+      <td class="sil" data-forma="pickup" data-l="5.33" data-h="1.92" data-wb="3.11"></td>
+      <td data-v="5.33">5,33</td><td data-v="1.965">1,97</td><td data-v="1.92">1,92</td><td data-v="0">—</td>
+      <td data-v="45208100">45.208.100</td>
+      <td data-v="4448" class="ok">4.448</td>
+      <td data-v="36733346" class="mal">36.733.000</td><td data-v="612222">612.222</td>
+    </tr>
+    <tr class="mia">
+      <td class="modelo">Škoda Kodiaq 2025<span>SUV 7 asientos · bencina</span></td>
+      <td class="sil" data-forma="suv" data-l="4.758" data-h="1.659" data-wb="2.791"></td>
+      <td data-v="4.758">4,76</td><td data-v="1.864">1,86</td><td data-v="1.659">1,66</td><td data-v="12.5">12,5</td>
+      <td data-v="0">—</td>
+      <td data-v="11980">11.980</td>
+      <td data-v="0">—</td><td data-v="0">—</td>
+    </tr>
     <tr class="ref">
       <td class="modelo">VW Golf<span>Hatchback bencina</span></td>
       <td class="sil" data-forma="hatch" data-l="4.284" data-h="1.456" data-wb="2.62"></td>
@@ -181,8 +213,10 @@
 <div class="cajas">
   <div class="caja"><b>Más barata de tener</b>RAM 700 SLT — $19,1M a 5 años, $317.534 al mes.</div>
   <div class="caja"><b>Casi empatada</b>Oroch 1.6 Zen — $19,6M: gasta más bencina, pero cuesta $1,7M menos al comprarla.</div>
-  <div class="caja"><b>La eléctrica no da</b>RD6 Air — $40,7M, más del doble que la RAM. Ahorra $3,4M en energía y pierde $22M en depreciación.</div>
-  <div class="caja"><b>Si quieres enchufar</b>RD6 PHEV — $25,3M. $6M más que la RAM, pero con 80 km eléctricos diarios.</div>
+  <div class="caja"><b>Contra tu Kodiaq</b>La RAM 700 es 28 cm más corta que tu Škoda. Las eléctricas grandes son 57 a 61 cm más largas.</div>
+  <div class="caja"><b>La eléctrica más razonable</b>Maxus T90 EV — $33,3M y $27,7M a 5 años. La más barata de las 100% eléctricas.</div>
+  <div class="caja"><b>Si quieres enchufar</b>RD6 PHEV — $25,3M a 5 años. $6M más que la RAM, pero con 80 km eléctricos diarios.</div>
+  <div class="caja"><b>Ninguna eléctrica gana</b>Todas cuestan más a 5 años que la RAM: pierden en depreciación mucho más de lo que ahorran en energía.</div>
 </div>
 
 <h2>Cuánto mide de más que la RAM 700</h2>
@@ -230,7 +264,8 @@ function pathPerfil(forma, L, H){
   const P = {
     pickup: [[0,.30],[.02,.42],[.12,.45],[.22,.62],[.34,1],[.60,1],[.66,.58],[.69,.60],[1,.60],[1,.30]],
     hatch:  [[0,.33],[.03,.45],[.15,.48],[.28,.70],[.42,1],[.72,1],[.90,.72],[1,.60],[1,.33]],
-    sedan:  [[0,.33],[.03,.45],[.16,.48],[.30,.70],[.45,1],[.66,1],[.82,.62],[1,.58],[1,.33]]
+    sedan:  [[0,.33],[.03,.45],[.16,.48],[.30,.70],[.45,1],[.66,1],[.82,.62],[1,.58],[1,.33]],
+    suv:    [[0,.30],[.03,.44],[.14,.47],[.26,.66],[.38,1],[.74,1],[.88,.80],[1,.62],[1,.30]]
   }[forma];
   return 'M' + P.map(p => (p[0]*L).toFixed(3) + ',' + (p[1]*H).toFixed(3)).join(' L') + ' Z';
 }
@@ -281,6 +316,7 @@ const filas = Array.from(document.querySelectorAll('#tabla tbody tr'));
 const datos = filas.map(f => ({
   nombre: f.cells[0].firstChild.textContent.trim(),
   ref: f.classList.contains('ref'),
+  mia: f.classList.contains('mia'),
   forma: f.cells[1].dataset.forma,
   largo: parseFloat(f.cells[1].dataset.l),
   alto:  parseFloat(f.cells[1].dataset.h),
@@ -300,7 +336,7 @@ datos.forEach(d => { const k = d.nombre.replace(/ (SLT|Bighorn|Air|PHEV).*/,'') 
     const txt = dl === 0 && dh === 0 ? 'la referencia'
       : (dl >= 0 ? '+' : '') + dl + ' cm largo · ' + (dh >= 0 ? '+' : '') + dh + ' cm alto';
     c.insertAdjacentHTML('beforeend',
-      '<div class="fila' + (d.ref ? ' r' : '') + '">' +
+      '<div class="fila' + (d.ref ? ' r' : d.mia ? ' m' : '') + '">' +
         '<span class="n">' + d.nombre + '</span>' +
         svgPerfil(d.forma, d.largo, d.alto, d.wb, 34, true) +
         '<span class="v">' + txt + '</span>' +
@@ -316,7 +352,7 @@ datos.forEach(d => { const k = d.nombre.replace(/ (SLT|Bighorn|Air|PHEV).*/,'') 
     const w = EA*s + 26, h = EL*s + 26;
     const sobra = Math.max(0, d.largo - EL), x = (w - d.ancho*s)/2, y = 13;
     let p = '<rect class="est" x="'+((w-EA*s)/2)+'" y="13" width="'+(EA*s)+'" height="'+(EL*s)+'" rx="2"/>' +
-      '<rect class="'+(d.ref?'autoref':'auto')+'" x="'+x.toFixed(1)+'" y="'+y+'" width="'+(d.ancho*s).toFixed(1)+'" height="'+(d.largo*s).toFixed(1)+'" rx="5"/>';
+      '<rect class="'+(d.mia?'automia':d.ref?'autoref':'auto')+'" x="'+x.toFixed(1)+'" y="'+y+'" width="'+(d.ancho*s).toFixed(1)+'" height="'+(d.largo*s).toFixed(1)+'" rx="5"/>';
     if (sobra > 0)
       p += '<rect class="sobra" x="'+x.toFixed(1)+'" y="'+(y+EL*s).toFixed(1)+'" width="'+(d.ancho*s).toFixed(1)+'" height="'+(sobra*s).toFixed(1)+'" rx="2"/>';
     c.insertAdjacentHTML('beforeend',
@@ -335,7 +371,9 @@ datos.forEach(d => { const k = d.nombre.replace(/ (SLT|Bighorn|Air|PHEV).*/,'') 
     ['RAM 700 Bighorn CD 1.3 CVT',5075000,3231386,2354891, 950000, 9633645],
     ['Renault Oroch 1.3T CVT Intens',5895000,3083861,2263261,1000000,9258795],
     ['Riddara RD6 PHEV Pro',      3050000,1123971,3140291, 900000,17128860],
-    ['Riddara RD6 Air',           1680000,2125032,5627391, 550000,30694860]
+    ['Riddara RD6 Air',           1680000,2125032,5627391, 550000,30694860],
+    ['Maxus T90 EV',              2144000,1334721,3663891, 550000,19984860],
+    ['JAC T9 EV AWD Advance',     2224000,1861595,4972891, 550000,27124860]
   ];
   const max = Math.max(...TCO.map(r => r.slice(1).reduce((a,b)=>a+b,0)));
   const c = document.getElementById('tco');
@@ -360,12 +398,12 @@ datos.forEach(d => { const k = d.nombre.replace(/ (SLT|Bighorn|Air|PHEV).*/,'') 
     unicos.slice().sort((a,b) => a[campo] - b[campo]).forEach(d => {
       const pct = ((d[campo] - min) / (max - min)) * 88 + 12;
       c.insertAdjacentHTML('beforeend',
-        '<div class="fila' + (d.ref ? ' r' : '') + '"><span class="n">' + d.nombre + '</span>' +
+        '<div class="fila' + (d.ref ? ' r' : d.mia ? ' m' : '') + '"><span class="n">' + d.nombre + '</span>' +
         '<span class="b" style="width:' + pct.toFixed(1) + '%"></span>' +
         '<span class="v">' + fmt(d[campo]) + '</span></div>');
     });
   }
-  pintar('barrasLargo','largo', v => v.toFixed(2).replace('.',',')+' m', 5.26, 4.0);
+  pintar('barrasLargo','largo', v => v.toFixed(2).replace('.',',')+' m', 5.37, 4.0);
   pintar('barrasCosto','costo', v => '$'+v.toLocaleString('es-CL'), 13610, 0);
 })();
 
