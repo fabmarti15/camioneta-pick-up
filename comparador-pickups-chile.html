@@ -36,6 +36,10 @@
   thead th.desc::after{content:" ▼";color:var(--azul)}
   th.pin,td.pin{position:sticky;left:0;z-index:1;background:var(--fondo);border-right:1px solid var(--linea);min-width:215px}
   thead th.pin{z-index:3}
+  th.pinR,td.pinR{position:sticky;right:0;z-index:1;background:#f4f8fc;border-left:2px solid var(--tinta);min-width:132px}
+  thead th.pinR{z-index:3;background:#f4f8fc}
+  tr.mia td.pinR{background:#e8f5ed}
+  tbody tr:hover td.pinR{background:#e8f0f8}
   tbody tr:hover td{background:var(--suave)}
   tr.ref td{color:var(--gris);font-style:italic}
   tr.mia td.pin,tr.mia td{background:#f0faf4}
@@ -95,7 +99,7 @@
 <div class="wrap">
 
 <h1>Pick-ups chicas en Chile</h1>
-<p class="sub">Tabla completa: dimensiones, precios y los cinco componentes del costo a 5 años, modelo por modelo. Haz clic en cualquier encabezado para ordenar; la primera columna queda fija al desplazar. Supuestos: 10.000 km al año, bencina 93 a $1.497/L, luz de casa $160/kWh.</p>
+<p class="sub">Tabla completa: dimensiones, precios y los cinco componentes del costo a 5 años, modelo por modelo. Haz clic en cualquier encabezado para ordenar; la primera columna queda fija al desplazar. La columna <b>TOTAL 5 años</b>, fija en el borde derecho, es la suma de combustible + permiso + seguro + mantención + depreciación: el costo real de tener el vehículo. Supuestos: 10.000 km al año, bencina 93 a $1.497/L, luz de casa $160/kWh.</p>
 
 <div class="scroll"><table id="tabla"><thead><tr></tr></thead><tbody></tbody></table></div>
 
@@ -183,7 +187,7 @@ const COLS = [
   {t:'Seguro', sub:'5 años', v:a=>a.s, r:a=>cl(a.s)},
   {t:'Mantención', sub:'5 años', v:a=>a.m, r:a=>cl(a.m)},
   {t:'Depreciación', sub:'5 años', v:a=>a.d, r:a=>cl(a.d)},
-  {t:'TOTAL 5 años', sub:'$', g:1, v:a=>a.t, r:a=>'<span class="tot '+(a.t<19500000?'ok':a.t>35000000?'mal':'')+'">'+cl(a.t)+'</span>'},
+  {t:'TOTAL 5 años', sub:'todo incluido', cls:'pinR', v:a=>a.t, r:a=>'<span class="tot '+(a.t<19500000?'ok':a.t>35000000?'mal':'')+'">'+cl(a.t)+'</span>'},
   {t:'Al mes', sub:'$', v:a=>a.mes, r:a=>cl(a.mes)},
   {t:'Por km', sub:'$', v:a=>a.km, r:a=>cl(a.km)}
 ];
