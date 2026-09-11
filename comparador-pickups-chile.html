@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Comparador pick-ups chicas — Chile 2026</title>
+<style>
+  :root{
+    --tinta:#1a1a1a; --gris:#666; --linea:#e5e5e5; --fondo:#fff;
+    --azul:#2b6cb0; --azul2:#9ab8d8; --rojo:#c53030; --verde:#2f855a; --suave:#f7f7f7;
+    --c1:#2b6cb0; --c2:#718096; --c3:#805ad5; --c4:#2f855a; --c5:#dd6b20;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--fondo);color:var(--tinta);
+    font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    padding:32px 24px 64px;}
+  .wrap{max-width:1280px;margin:0 auto}
+  h1{font-size:24px;font-weight:600;margin:0 0 4px}
+  .sub{color:var(--gris);font-size:13px;margin:0 0 28px}
+  h2{font-size:17px;font-weight:600;margin:44px 0 10px}
+  .nota{color:var(--gris);font-size:12.5px;margin:6px 0 16px}
+  .leyenda{color:var(--gris);font-size:12px;margin:14px 0 0}
+
+  .scroll{overflow-x:auto}
+  table{border-collapse:collapse;width:100%;font-size:13.5px;min-width:940px}
+  th,td{padding:9px 10px;text-align:right;border-bottom:1px solid var(--linea);white-space:nowrap}
+  th:first-child,td:first-child{text-align:left;white-space:normal}
+  th.sil,td.sil{text-align:left;padding-left:4px}
+  thead th{
+    position:sticky;top:0;background:var(--fondo);border-bottom:2px solid var(--tinta);
+    font-weight:600;font-size:12px;cursor:pointer;user-select:none;
+  }
+  thead th:hover{background:var(--suave)}
+  thead th::after{content:" ⇅";color:#bbb;font-size:10px}
+  thead th.asc::after{content:" ▲";color:var(--azul)}
+  thead th.desc::after{content:" ▼";color:var(--azul)}
+  tbody tr:hover{background:var(--suave)}
+  tr.ref{color:var(--gris);font-style:italic}
+  tr.ref td:first-child::after{content:" · referencia";font-size:11px;color:#999;font-style:normal}
+  .ok{color:var(--verde);font-weight:600}
+  .mal{color:var(--rojo);font-weight:600}
+  .modelo{font-weight:600}
+  .modelo span{display:block;font-weight:400;font-size:11.5px;color:var(--gris);font-style:normal}
+
+  .sil svg{display:block}
+  .cuerpo{fill:#2b6cb0}
+  .exceso{fill:#c53030}
+  .rueda{fill:#1a1a1a}
+  .fantasma{fill:none;stroke:#1a1a1a;stroke-width:1.2;stroke-dasharray:4 3;opacity:.55}
+  tr.ref .cuerpo,.fila.r .cuerpo{fill:#b8c7d4}
+  tr.ref .rueda,.fila.r .rueda{fill:#8a97a2}
+  .extra{font-size:11.5px;color:var(--rojo);margin-left:6px}
+  .extra.cero{color:var(--gris)}
+
+  .fila{display:flex;align-items:center;gap:10px;margin:5px 0;font-size:13px}
+  .fila .n{width:200px;flex:none}
+  .fila .b{height:15px;background:var(--azul);border-radius:2px}
+  .fila.r .b{background:var(--azul2)}
+  .fila .v{color:var(--gris);font-size:12px}
+
+  .apilada{display:flex;height:20px;border-radius:3px;overflow:hidden;flex:1;min-width:120px}
+  .apilada i{display:block}
+  .lg{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--gris);margin:10px 0 14px}
+  .lg span{display:flex;align-items:center;gap:5px}
+  .lg b{width:11px;height:11px;border-radius:2px;display:inline-block}
+
+  .planta{display:flex;flex-wrap:wrap;gap:22px;margin-top:12px}
+  .planta figure{margin:0;text-align:center}
+  .planta figcaption{font-size:11.5px;color:var(--gris);margin-top:5px;max-width:130px}
+  .planta .est{fill:#fafafa;stroke:#ccc;stroke-dasharray:4 3}
+  .planta .auto{fill:#2b6cb0;opacity:.85}
+  .planta .autoref{fill:#b8c7d4}
+  .planta .sobra{fill:#c53030}
+
+  .cajas{display:flex;gap:16px;flex-wrap:wrap;margin:18px 0 0}
+  .caja{border:1px solid var(--linea);border-radius:6px;padding:12px 14px;font-size:13px;flex:1;min-width:220px}
+  .caja b{display:block;font-size:12px;color:var(--gris);font-weight:500;margin-bottom:3px}
+  footer{margin-top:44px;padding-top:16px;border-top:1px solid var(--linea);color:var(--gris);font-size:12px}
+  @media(max-width:700px){ .fila .n{width:130px} body{padding:20px 14px 48px} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>Pick-ups chicas en Chile</h1>
+<p class="sub">Precios de lista septiembre 2026. Haz clic en cualquier encabezado para ordenar. Las siluetas están a escala real; el contorno punteado es siempre la RAM 700, la más chica, y en rojo lo que cada modelo le agrega.</p>
+
+<div class="scroll">
+<table id="tabla">
+  <thead>
+    <tr>
+      <th data-tipo="txt">Modelo</th>
+      <th class="sil">Silueta vs RAM 700</th>
+      <th data-tipo="num">Largo (m)</th>
+      <th data-tipo="num">Ancho (m)</th>
+      <th data-tipo="num">Alto (m)</th>
+      <th data-tipo="num">km/l</th>
+      <th data-tipo="num">Con IVA ($)</th>
+      <th data-tipo="num">$/100 km<br><span style="font-weight:400;color:#888">carga en casa</span></th>
+      <th data-tipo="num">Costo 5 años ($)</th>
+      <th data-tipo="num">$/mes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="modelo">RAM 700 SLT CD 1.3<span>Ex Fiat Strada · bencina</span></td>
+      <td class="sil" data-forma="pickup" data-l="4.48" data-h="1.60" data-wb="2.737"></td>
+      <td data-v="4.48">4,48</td><td data-v="1.732">1,73</td><td data-v="1.60">1,60</td><td data-v="14.75">14,8</td>
+      <td data-v="18433100">18.433.100</td>
+      <td data-v="10150">10.150</td>
+      <td data-v="19052048" class="ok">19.052.000</td><td data-v="317534">317.534</td>
+    </tr>
+    <tr>
+      <td class="modelo">RAM 700 Bighorn CD 1.3 CVT<span>Bencina, automática</span></td>
+      <td class="sil" data-forma="pickup" data-l="4.48" data-h="1.60" data-wb="2.737"></td>
+      <td data-v="4.48">4,48</td><td data-v="1.732">1,73</td><td data-v="1.60">1,60</td><td data-v="14.75">14,8</td>
+      <td data-v="21408100">21.408.100</td>
+      <td data-v="10150">10.150</td>
+      <td data-v="21244922">21.245.000</td><td data-v="354082">354.082</td>
+    </tr>
+    <tr>
+      <td class="modelo">Chevrolet Montana 1.2T LT<span>Bencina turbo 130 HP</span></td>
+      <td class="sil" data-forma="pickup" data-l="4.717" data-h="1.659" data-wb="2.80"></td>
+      <td data-v="4.717">4,72</td><td data-v="1.798">1,80</td><td data-v="1.659">1,66</td><td data-v="14.25">14,3</td>
+      <td data-v="19385100">19.385.100</td>
+      <td data-v="10510">10.510</td>
+      <td data-v="20033768">20.034.000</td><td data-v="333896">333.896</td>
+    </tr>
+    <tr>
+      <td class="modelo">Renault Oroch 1.6 Zen 4×2<span>Bencina 115 HP · la más barata</span></td>
+      <td class="sil" data-forma="pickup" data-l="4.72" data-h="1.69" data-wb="2.829"></td>
+      <td data-v="4.72">4,72</td><td data-v="1.82">1,82</td><td data-v="1.69">1,69</td><td data-v="11">11,0</td>
+      <td data-v="16767100">16.767.100</td>
+      <td data-v="13610">13.610</td>
+      <td data-v="19604038">19.604.000</td><td data-v="326734">326.734</td>
+    </tr>
+    <tr>
+      <td class="modelo">Renault Oroch 1.3T CVT Intens<span>Bencina turbo 156 HP</span></td>
+      <td class="sil" data-forma="pickup" data-l="4.72" data-h="1.69" data-wb="2.829"></td>
+      <td data-v="4.72">4,72</td><td data-v="1.82">1,82</td><td data-v="1.69">1,69</td><td data-v="12.7">12,7</td>
+      <td data-v="20575100">20.575.100</td>
+      <td data-v="11790">11.790</td>
+      <td data-v="21500917">21.501.000</td><td data-v="358349">358.349</td>
+    </tr>
+    <tr>
+      <td class="modelo">Riddara RD6 PHEV Pro<span>Híbrida enchufable · 80+ km eléctricos</span></td>
+      <td class="sil" data-forma="pickup" data-l="5.26" data-h="1.865" data-wb="3.12"></td>
+      <td data-v="5.26">5,26</td><td data-v="1.9">1,90</td><td data-v="1.865">1,87</td><td data-v="0">—</td>
+      <td data-v="28548100">28.548.100</td>
+      <td data-v="6100" class="ok">6.100</td>
+      <td data-v="25343122">25.343.000</td><td data-v="422385">422.385</td>
+    </tr>
+    <tr>
+      <td class="modelo">Riddara RD6 Air<span>100% eléctrica · 63 kWh · 373 km</span></td>
+      <td class="sil" data-forma="pickup" data-l="5.26" data-h="1.865" data-wb="3.12"></td>
+      <td data-v="5.26">5,26</td><td data-v="1.9">1,90</td><td data-v="1.865">1,87</td><td data-v="0">—</td>
+      <td data-v="51158100">51.158.100</td>
+      <td data-v="3360" class="ok">3.360</td>
+      <td data-v="40677283" class="mal">40.677.000</td><td data-v="677955">677.955</td>
+    </tr>
+    <tr class="ref">
+      <td class="modelo">VW Golf<span>Hatchback bencina</span></td>
+      <td class="sil" data-forma="hatch" data-l="4.284" data-h="1.456" data-wb="2.62"></td>
+      <td data-v="4.284">4,28</td><td data-v="1.789">1,79</td><td data-v="1.456">1,46</td><td data-v="14">14,0</td>
+      <td data-v="0">—</td>
+      <td data-v="10690">10.690</td>
+      <td data-v="0">—</td><td data-v="0">—</td>
+    </tr>
+    <tr class="ref">
+      <td class="modelo">Toyota Corolla sedán<span>Bencina (híbrido ~20 km/l)</span></td>
+      <td class="sil" data-forma="sedan" data-l="4.63" data-h="1.435" data-wb="2.70"></td>
+      <td data-v="4.63">4,63</td><td data-v="1.78">1,78</td><td data-v="1.435">1,44</td><td data-v="14">14,0</td>
+      <td data-v="0">—</td>
+      <td data-v="10690">10.690</td>
+      <td data-v="0">—</td><td data-v="0">—</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="cajas">
+  <div class="caja"><b>Más barata de tener</b>RAM 700 SLT — $19,1M a 5 años, $317.534 al mes.</div>
+  <div class="caja"><b>Casi empatada</b>Oroch 1.6 Zen — $19,6M: gasta más bencina, pero cuesta $1,7M menos al comprarla.</div>
+  <div class="caja"><b>La eléctrica no da</b>RD6 Air — $40,7M, más del doble que la RAM. Ahorra $3,4M en energía y pierde $22M en depreciación.</div>
+  <div class="caja"><b>Si quieres enchufar</b>RD6 PHEV — $25,3M. $6M más que la RAM, pero con 80 km eléctricos diarios.</div>
+</div>
+
+<h2>Cuánto mide de más que la RAM 700</h2>
+<div id="siluetas"></div>
+<p class="leyenda">Contorno punteado: RAM 700 (4,48 × 1,60 m). En rojo, lo que cada modelo agrega por fuera de esa referencia.</p>
+
+<h2>Huella en un estacionamiento</h2>
+<p class="nota">Vista desde arriba. El recuadro punteado es un estacionamiento estándar chileno de 2,40 × 5,00 m. En rojo, lo que sobresale.</p>
+<div class="planta" id="planta"></div>
+
+<h2>Costo total a 5 años</h2>
+<p class="nota">10.000 km al año (50.000 km en total), incluida la pérdida de valor al vender.</p>
+<div class="lg">
+  <span><b style="background:var(--c1)"></b>Combustible o carga</span>
+  <span><b style="background:var(--c2)"></b>Permiso de circulación</span>
+  <span><b style="background:var(--c3)"></b>Seguro</span>
+  <span><b style="background:var(--c4)"></b>Mantención</span>
+  <span><b style="background:var(--c5)"></b>Depreciación</span>
+</div>
+<div id="tco"></div>
+
+<h2>Largo</h2>
+<div id="barrasLargo"></div>
+
+<h2>Costo por 100 km</h2>
+<div id="barrasCosto"></div>
+<p class="leyenda">Eléctrica e híbrida enchufable, cargando en casa.</p>
+
+<footer>
+  <p><b>Costo por 100 km.</b> Bencina 93 a $1.497/L (ENAP, 10 sep 2026). Electricidad domiciliaria a $160/kWh (BT1, Región Metropolitana); carga rápida pública a $500/kWh. Consumo eléctrico estimado en 21 kWh/100 km para la RD6. La PHEV se calcula con uso mixto 70% eléctrico / 30% bencina. Rendimientos homologados del fabricante: en uso real, resta entre 10% y 20%.</p>
+  <p><b>Costo a 5 años.</b> Permiso de circulación con la tabla progresiva sobre tasación fiscal, con rebaja del 75% para eléctrica e híbrida enchufable (SII 2026) y tasación bajando 12% al año. Seguro estimado en 2,2% del valor del vehículo al año. Mantención una vez al año. Depreciación: 45% a 5 años en RAM, Chevrolet y Renault; 60% en Riddara, por el castigo de reventa que hoy tienen las marcas chinas nuevas. Ese último supuesto es el más incierto de todos y es el que decide la comparación.</p>
+  <p><b>Precios.</b> Valores de lista con IVA, sin bonos ni descuento de negociación. Con factura a empresa, el IVA lo recuperas.</p>
+  <p><b>Siluetas.</b> Dibujos esquemáticos a escala con las medidas oficiales, no fotografías.</p>
+  <p>Fuentes: Autofact (RAM 700, Montana), Autocosmos (Oroch), Rutamotor y Riddara Chile (RD6), ENAP, SII.</p>
+</footer>
+
+</div>
+
+<script>
+/* ---------- Silueta con fantasma de referencia ---------- */
+const REF = { l: 4.48, h: 1.60, wb: 2.737, forma: 'pickup' };
+let uid = 0;
+
+function pathPerfil(forma, L, H){
+  const P = {
+    pickup: [[0,.30],[.02,.42],[.12,.45],[.22,.62],[.34,1],[.60,1],[.66,.58],[.69,.60],[1,.60],[1,.30]],
+    hatch:  [[0,.33],[.03,.45],[.15,.48],[.28,.70],[.42,1],[.72,1],[.90,.72],[1,.60],[1,.33]],
+    sedan:  [[0,.33],[.03,.45],[.16,.48],[.30,.70],[.45,1],[.66,1],[.82,.62],[1,.58],[1,.33]]
+  }[forma];
+  return 'M' + P.map(p => (p[0]*L).toFixed(3) + ',' + (p[1]*H).toFixed(3)).join(' L') + ' Z';
+}
+
+function svgPerfil(forma, L, H, WB, s, conFantasma){
+  const id = 'c' + (uid++);
+  const r = 0.33, ejeD = 0.18*L, ejeT = Math.min(0.18*L + WB, L - 0.12*L);
+  const w = Math.max(L, REF.l)*s + 2, h = Math.max(H, REF.h)*s + 3;
+  const base = Math.max(H, REF.h);
+  const d = pathPerfil(forma, L, H);
+  const MAXL = Math.max(L, REF.l) + 0.3, MAXH = Math.max(H, REF.h) + 0.3;
+
+  let capas = '';
+  if (conFantasma){
+    capas =
+      '<defs>' +
+        '<clipPath id="in'+id+'"><rect x="-0.3" y="-0.3" width="'+(REF.l+0.3)+'" height="'+(REF.h+0.3)+'"/></clipPath>' +
+        '<clipPath id="out'+id+'" clip-rule="evenodd"><path d="M-0.3,-0.3 H'+MAXL+' V'+MAXH+' H-0.3 Z ' +
+          'M-0.3,-0.3 H'+REF.l+' V'+REF.h+' H-0.3 Z"/></clipPath>' +
+      '</defs>' +
+      '<path class="cuerpo" d="'+d+'" clip-path="url(#in'+id+')"/>' +
+      '<path class="exceso" d="'+d+'" clip-path="url(#out'+id+')"/>' +
+      '<path class="fantasma" vector-effect="non-scaling-stroke" d="'+pathPerfil(REF.forma, REF.l, REF.h)+'"/>';
+  } else {
+    capas = '<path class="cuerpo" d="'+d+'"/>';
+  }
+
+  return '<svg width="'+w.toFixed(0)+'" height="'+h.toFixed(0)+'" viewBox="0 0 '+w.toFixed(1)+' '+h.toFixed(1)+'">' +
+    '<g transform="translate(1,'+(base*s).toFixed(1)+') scale('+s+',-'+s+')">' +
+      capas +
+      '<circle class="rueda" cx="'+ejeD.toFixed(2)+'" cy="'+r+'" r="'+r+'"/>' +
+      '<circle class="rueda" cx="'+ejeT.toFixed(2)+'" cy="'+r+'" r="'+r+'"/>' +
+    '</g></svg>';
+}
+
+document.querySelectorAll('td.sil').forEach(td => {
+  const L = +td.dataset.l, H = +td.dataset.h;
+  const dl = Math.round((L - REF.l)*100), dh = Math.round((H - REF.h)*100);
+  const txt = (dl > 0 || dh > 0)
+    ? '+' + dl + ' cm de largo' + (dh > 0 ? ' · +' + dh + ' cm de alto' : '')
+    : (dl === 0 && dh === 0 ? 'referencia' : dl + ' cm de largo');
+  td.innerHTML = svgPerfil(td.dataset.forma, L, H, +td.dataset.wb, 17, true) +
+    '<div class="extra' + (dl > 0 ? '' : ' cero') + '">' + txt + '</div>';
+});
+
+/* ---------- Datos ---------- */
+const filas = Array.from(document.querySelectorAll('#tabla tbody tr'));
+const datos = filas.map(f => ({
+  nombre: f.cells[0].firstChild.textContent.trim(),
+  ref: f.classList.contains('ref'),
+  forma: f.cells[1].dataset.forma,
+  largo: parseFloat(f.cells[1].dataset.l),
+  alto:  parseFloat(f.cells[1].dataset.h),
+  wb:    parseFloat(f.cells[1].dataset.wb),
+  ancho: parseFloat(f.cells[3].dataset.v),
+  costo: parseFloat(f.cells[7].dataset.v)
+}));
+const unicos = [], vistos = new Set();
+datos.forEach(d => { const k = d.nombre.replace(/ (SLT|Bighorn|Air|PHEV).*/,'') + d.largo + d.costo;
+  if (!vistos.has(k)) { vistos.add(k); unicos.push(d); } });
+
+/* ---------- Siluetas grandes ---------- */
+(function(){
+  const c = document.getElementById('siluetas');
+  unicos.slice().sort((a,b) => a.largo - b.largo).forEach(d => {
+    const dl = Math.round((d.largo - REF.l)*100), dh = Math.round((d.alto - REF.h)*100);
+    const txt = dl === 0 && dh === 0 ? 'la referencia'
+      : (dl >= 0 ? '+' : '') + dl + ' cm largo · ' + (dh >= 0 ? '+' : '') + dh + ' cm alto';
+    c.insertAdjacentHTML('beforeend',
+      '<div class="fila' + (d.ref ? ' r' : '') + '">' +
+        '<span class="n">' + d.nombre + '</span>' +
+        svgPerfil(d.forma, d.largo, d.alto, d.wb, 34, true) +
+        '<span class="v">' + txt + '</span>' +
+      '</div>');
+  });
+})();
+
+/* ---------- Huella ---------- */
+(function(){
+  const c = document.getElementById('planta');
+  const EL = 5.00, EA = 2.40, s = 24;
+  unicos.slice().sort((a,b) => a.largo - b.largo).forEach(d => {
+    const w = EA*s + 26, h = EL*s + 26;
+    const sobra = Math.max(0, d.largo - EL), x = (w - d.ancho*s)/2, y = 13;
+    let p = '<rect class="est" x="'+((w-EA*s)/2)+'" y="13" width="'+(EA*s)+'" height="'+(EL*s)+'" rx="2"/>' +
+      '<rect class="'+(d.ref?'autoref':'auto')+'" x="'+x.toFixed(1)+'" y="'+y+'" width="'+(d.ancho*s).toFixed(1)+'" height="'+(d.largo*s).toFixed(1)+'" rx="5"/>';
+    if (sobra > 0)
+      p += '<rect class="sobra" x="'+x.toFixed(1)+'" y="'+(y+EL*s).toFixed(1)+'" width="'+(d.ancho*s).toFixed(1)+'" height="'+(sobra*s).toFixed(1)+'" rx="2"/>';
+    c.insertAdjacentHTML('beforeend',
+      '<figure><svg width="'+w+'" height="'+h+'">'+p+'</svg><figcaption><b>'+d.nombre+'</b><br>' +
+      (sobra > 0 ? 'sobresale ' + Math.round(sobra*100) + ' cm' : 'entra completa') +
+      ' · ' + Math.round((EA - d.ancho)*100) + ' cm libres a lo ancho</figcaption></figure>');
+  });
+})();
+
+/* ---------- Costo 5 años ---------- */
+(function(){
+  const TCO = [
+    ['RAM 700 SLT CD 1.3',        5075000,2704512,2027641, 950000, 8294895],
+    ['Renault Oroch 1.6 Zen 4×2', 6805000,2409462,1844381,1000000, 7545195],
+    ['Chevrolet Montana 1.2T LT', 5255000,2873112,2132361,1050000, 8723295],
+    ['RAM 700 Bighorn CD 1.3 CVT',5075000,3231386,2354891, 950000, 9633645],
+    ['Renault Oroch 1.3T CVT Intens',5895000,3083861,2263261,1000000,9258795],
+    ['Riddara RD6 PHEV Pro',      3050000,1123971,3140291, 900000,17128860],
+    ['Riddara RD6 Air',           1680000,2125032,5627391, 550000,30694860]
+  ];
+  const max = Math.max(...TCO.map(r => r.slice(1).reduce((a,b)=>a+b,0)));
+  const c = document.getElementById('tco');
+  const cols = ['var(--c1)','var(--c2)','var(--c3)','var(--c4)','var(--c5)'];
+  TCO.sort((a,b) => a.slice(1).reduce((x,y)=>x+y,0) - b.slice(1).reduce((x,y)=>x+y,0));
+  TCO.forEach(r => {
+    const total = r.slice(1).reduce((a,b)=>a+b,0);
+    const segs = r.slice(1).map((v,i) =>
+      '<i style="background:'+cols[i]+';width:'+(v/total*100).toFixed(2)+'%" title="'+
+      ['Combustible','Permiso','Seguro','Mantención','Depreciación'][i]+': $'+Math.round(v).toLocaleString('es-CL')+'"></i>').join('');
+    c.insertAdjacentHTML('beforeend',
+      '<div class="fila"><span class="n">'+r[0]+'</span>' +
+      '<span class="apilada" style="flex:0 0 '+(total/max*72).toFixed(1)+'%">'+segs+'</span>' +
+      '<span class="v">$'+Math.round(total).toLocaleString('es-CL')+' · $'+Math.round(total/60).toLocaleString('es-CL')+'/mes</span></div>');
+  });
+})();
+
+/* ---------- Barras ---------- */
+(function(){
+  function pintar(cont, campo, fmt, max, min){
+    const c = document.getElementById(cont);
+    unicos.slice().sort((a,b) => a[campo] - b[campo]).forEach(d => {
+      const pct = ((d[campo] - min) / (max - min)) * 88 + 12;
+      c.insertAdjacentHTML('beforeend',
+        '<div class="fila' + (d.ref ? ' r' : '') + '"><span class="n">' + d.nombre + '</span>' +
+        '<span class="b" style="width:' + pct.toFixed(1) + '%"></span>' +
+        '<span class="v">' + fmt(d[campo]) + '</span></div>');
+    });
+  }
+  pintar('barrasLargo','largo', v => v.toFixed(2).replace('.',',')+' m', 5.26, 4.0);
+  pintar('barrasCosto','costo', v => '$'+v.toLocaleString('es-CL'), 13610, 0);
+})();
+
+/* ---------- Ordenar ---------- */
+(function(){
+  const tabla = document.getElementById('tabla'), tbody = tabla.tBodies[0], ths = tabla.tHead.rows[0].cells;
+  let colActiva = -1, asc = true;
+  const valor = (fila,i) => {
+    const c = fila.cells[i];
+    if (c.classList.contains('sil')) return parseFloat(c.dataset.l);
+    return c.dataset.v !== undefined ? parseFloat(c.dataset.v) : c.textContent.trim().toLowerCase();
+  };
+  Array.from(ths).forEach((th,i) => th.addEventListener('click', () => {
+    asc = (colActiva === i) ? !asc : true; colActiva = i;
+    Array.from(ths).forEach(x => x.classList.remove('asc','desc'));
+    th.classList.add(asc ? 'asc' : 'desc');
+    Array.from(tbody.rows)
+      .sort((a,b) => { const va = valor(a,i), vb = valor(b,i);
+        return va < vb ? (asc?-1:1) : va > vb ? (asc?1:-1) : 0; })
+      .forEach(f => tbody.appendChild(f));
+  }));
+})();
+</script>
+</body>
+</html>
