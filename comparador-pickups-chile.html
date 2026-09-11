@@ -48,6 +48,8 @@
   .ok{color:var(--verde);font-weight:600}
   .mal{color:var(--rojo);font-weight:600}
   .tot{font-weight:600}
+  td a.link{color:var(--azul);text-decoration:none;font-weight:500;white-space:nowrap}
+  td a.link:hover{text-decoration:underline}
   .modelo{font-weight:600}
   .modelo span{display:block;font-weight:400;font-size:11px;color:var(--gris);font-style:normal}
   .tag{font-size:10px;font-weight:600;color:var(--verde)}
@@ -128,6 +130,7 @@
   <p><b>Costo a 5 años.</b> 10.000 km al año, 50.000 km en total. Permiso de circulación con la tabla progresiva sobre tasación fiscal, rebaja del 75% para eléctricas e híbridas enchufables (SII 2026) y tasación bajando 12% al año. Seguro estimado en 2,2% del valor al año. Mantención una vez al año. Depreciación a 5 años: 45% en RAM, Chevrolet, Renault y Volkswagen; 48% en Škoda; 38% en Toyota; 60% en Riddara, Maxus y JAC, por el castigo de reventa que hoy tienen las marcas chinas nuevas. Ese supuesto es el más incierto de todos y es el que decide la comparación.</p>
   <p><b>Autos de referencia.</b> La Škoda Kodiaq es la de Fabián; su costo a 5 años está calculado como si se comprara nueva hoy (Selection 1.5 TSI mHEV), solo para comparar. Del Golf, en Chile hoy solo se vende el GTI, un deportivo: sirve como referencia de tamaño, no de precio. El Corolla va en versión híbrida, la que se vende.</p>
   <p><b>Precios.</b> Lista con IVA, sin bonos ni descuento de negociación. El neto es lo que factura el concesionario a empresa; con factura, el IVA lo recuperas. La Maxus, la JAC y la Kodiaq no tienen precio neto publicado: se calculó dividiendo por 1,19.</p>
+  <p><b>Comprar.</b> Los enlaces van al sitio del distribuidor oficial en Chile de cada marca. Ojo con la Maxus T90 EV: el precio de esta tabla ($33.308.100 con IVA) corresponde a la generación anterior; el sitio de Andes Motor hoy ofrece la T90 EV nueva desde $52.990.000 + IVA, casi el doble.</p>
   <p><b>Siluetas.</b> Dibujos esquemáticos a escala con las medidas oficiales, no fotografías.</p>
   <p>Fuentes: Autofact, Autocosmos, Rutamotor, Riddara Chile, Maxus Chile, JAC Chile, Chileautos, ENAP, SII.</p>
 </footer>
@@ -136,6 +139,21 @@
 
 <script>
 const AUTOS = [{"n": "RAM 700 SLT CD 1.3","sub": "Ex Fiat Strada · bencina","forma": "pickup","L": 4.48,"A": 1.732,"H": 1.6,"WB": 2.737,"kml": 14.75,"kwh": null,"neto": 15490000,"iva": 18433100,"ccasa": 10149,"crap": 10149,"e": 5074500,"p": 2704512,"s": 2027641,"m": 950000,"d": 8294895,"t": 19051548,"mes": 317526,"km": 381,"cls": ""},{"n": "RAM 700 Bighorn CD 1.3 CVT","sub": "Bencina, automática","forma": "pickup","L": 4.48,"A": 1.732,"H": 1.6,"WB": 2.737,"kml": 14.75,"kwh": null,"neto": 17990000,"iva": 21408100,"ccasa": 10149,"crap": 10149,"e": 5074500,"p": 3231386,"s": 2354891,"m": 950000,"d": 9633645,"t": 21244422,"mes": 354074,"km": 425,"cls": ""},{"n": "Chevrolet Montana 1.2T LT","sub": "Bencina turbo 130 HP","forma": "pickup","L": 4.717,"A": 1.798,"H": 1.659,"WB": 2.8,"kml": 14.25,"kwh": null,"neto": 16290000,"iva": 19385100,"ccasa": 10505,"crap": 10505,"e": 5252500,"p": 2873112,"s": 2132361,"m": 1050000,"d": 8723295,"t": 20031268,"mes": 333854,"km": 401,"cls": ""},{"n": "Renault Oroch 1.6 Zen 4×2","sub": "Bencina 115 HP · la más barata","forma": "pickup","L": 4.72,"A": 1.82,"H": 1.69,"WB": 2.829,"kml": 11.0,"kwh": null,"neto": 14090000,"iva": 16767100,"ccasa": 13609,"crap": 13609,"e": 6804500,"p": 2409462,"s": 1844381,"m": 1000000,"d": 7545195,"t": 19603538,"mes": 326726,"km": 392,"cls": ""},{"n": "Renault Oroch 1.3T CVT Intens","sub": "Bencina turbo 156 HP","forma": "pickup","L": 4.72,"A": 1.82,"H": 1.69,"WB": 2.829,"kml": 12.7,"kwh": null,"neto": 17290000,"iva": 20575100,"ccasa": 11787,"crap": 11787,"e": 5893500,"p": 3083861,"s": 2263261,"m": 1000000,"d": 9258795,"t": 21499417,"mes": 358324,"km": 430,"cls": ""},{"n": "Riddara RD6 PHEV Pro","sub": "Híbrida enchufable · 80+ km eléctricos","forma": "pickup","L": 5.26,"A": 1.9,"H": 1.865,"WB": 3.12,"kml": null,"kwh": null,"neto": 23990000,"iva": 28548100,"ccasa": 6099,"crap": 10383,"e": 3049500,"p": 1123971,"s": 3140291,"m": 900000,"d": 17128860,"t": 25342622,"mes": 422377,"km": 507,"cls": ""},{"n": "Riddara RD6 Air","sub": "100% eléctrica · 63 kWh · 373 km NEDC","forma": "pickup","L": 5.26,"A": 1.9,"H": 1.865,"WB": 3.12,"kml": null,"kwh": 21.0,"neto": 42990000,"iva": 51158100,"ccasa": 3360,"crap": 10500,"e": 1680000,"p": 2125032,"s": 5627391,"m": 550000,"d": 30694860,"t": 40677283,"mes": 677955,"km": 814,"cls": ""},{"n": "Maxus T90 EV","sub": "100% eléctrica · 88,5 kWh · 471 km NEDC","forma": "pickup","L": 5.365,"A": 1.998,"H": 1.809,"WB": 3.155,"kml": null,"kwh": 26.8,"neto": 27989160,"iva": 33308100,"ccasa": 4288,"crap": 13400,"e": 2144000,"p": 1334721,"s": 3663891,"m": 550000,"d": 19984860,"t": 27677472,"mes": 461291,"km": 554,"cls": ""},{"n": "JAC T9 EV AWD Advance","sub": "100% eléctrica 4×4 · 88 kWh · 317 km WLTP","forma": "pickup","L": 5.33,"A": 1.965,"H": 1.92,"WB": 3.11,"kml": null,"kwh": 27.8,"neto": 37989160,"iva": 45208100,"ccasa": 4448,"crap": 13900,"e": 2224000,"p": 1861595,"s": 4972891,"m": 550000,"d": 27124860,"t": 36733346,"mes": 612222,"km": 735,"cls": ""},{"n": "Škoda Kodiaq 2025 Selection","sub": "SUV 7 asientos · 1.5 TSI mHEV","forma": "suv","L": 4.758,"A": 1.864,"H": 1.659,"WB": 2.791,"kml": 12.5,"kwh": null,"neto": 32344538,"iva": 38490000,"ccasa": 11976,"crap": 11976,"e": 5988000,"p": 6256599,"s": 4233900,"m": 1750000,"d": 18475200,"t": 36703699,"mes": 611728,"km": 734,"cls": "mia"},{"n": "VW Golf GTI","sub": "Único Golf a la venta en Chile","forma": "hatch","L": 4.284,"A": 1.789,"H": 1.456,"WB": 2.62,"kml": 11.0,"kwh": null,"neto": 36126050,"iva": 42990000,"ccasa": 13609,"crap": 13609,"e": 6804500,"p": 7053552,"s": 4728900,"m": 1600000,"d": 19345500,"t": 39532452,"mes": 658874,"km": 791,"cls": "ref"},{"n": "Toyota Corolla XLI Hybrid","sub": "Sedán híbrido","forma": "sedan","L": 4.63,"A": 1.78,"H": 1.435,"WB": 2.7,"kml": 20.0,"kwh": null,"neto": 20831933,"iva": 24790000,"ccasa": 7485,"crap": 7485,"e": 3742500,"p": 3830322,"s": 2726900,"m": 1000000,"d": 9420200,"t": 20719922,"mes": 345332,"km": 414,"cls": "ref"}];
+
+const URLS = {
+  'RAM 700 SLT CD 1.3':            ['RAM Chile',        'https://www.ram.com/cl/ram-700.html'],
+  'RAM 700 Bighorn CD 1.3 CVT':    ['RAM Chile',        'https://www.ram.com/cl/ram-700.html'],
+  'Chevrolet Montana 1.2T LT':     ['Chevrolet Chile',  'https://www.chevrolet.cl/pickups/pickup-montana'],
+  'Renault Oroch 1.6 Zen 4×2':     ['Dercocenter',      'https://www.dercocenter.cl/auto/renault/nueva-oroch'],
+  'Renault Oroch 1.3T CVT Intens': ['Dercocenter',      'https://www.dercocenter.cl/auto/renault/nueva-oroch'],
+  'Riddara RD6 PHEV Pro':          ['Riddara Chile',    'https://www.riddarachile.cl/pickup-hibrida-enchufable'],
+  'Riddara RD6 Air':               ['Riddara Chile',    'https://www.riddarachile.cl/riddara-rd6'],
+  'Maxus T90 EV':                  ['Maxus / Andes Motor','https://maxus.cl/-/t90-ev'],
+  'JAC T9 EV AWD Advance':         ['JAC Chile',        'https://www.jacautoschile.cl/modelos/electricos/jac-t9-ev/'],
+  'Škoda Kodiaq 2025 Selection':   ['Škoda Chile',      'https://www.skoda.cl/kodiaq/Nuevo-kodiaq'],
+  'VW Golf GTI':                   ['Volkswagen Chile', 'https://www.volkswagen.cl/golf-gti-volvio-la-leyenda'],
+  'Toyota Corolla XLI Hybrid':     ['Toyota Chile',     'https://toyota.cl/modelos/sedan/corolla-sedan/']
+};
 const REF = { l: 4.48, h: 1.60, wb: 2.737, forma: 'pickup' };
 const cl = v => '$' + Math.round(v).toLocaleString('es-CL');
 const m2 = v => v.toFixed(2).replace('.', ',');
@@ -189,7 +207,9 @@ const COLS = [
   {t:'Depreciación', sub:'5 años', v:a=>a.d, r:a=>cl(a.d)},
   {t:'TOTAL 5 años', sub:'todo incluido', cls:'pinR', v:a=>a.t, r:a=>'<span class="tot '+(a.t<19500000?'ok':a.t>35000000?'mal':'')+'">'+cl(a.t)+'</span>'},
   {t:'Al mes', sub:'$', v:a=>a.mes, r:a=>cl(a.mes)},
-  {t:'Por km', sub:'$', v:a=>a.km, r:a=>cl(a.km)}
+  {t:'Por km', sub:'$', v:a=>a.km, r:a=>cl(a.km)},
+  {t:'Comprar', sub:'distribuidor oficial', cls:'txt', v:a=>(URLS[a.n]||['zz'])[0],
+   r:a=>{const u=URLS[a.n]; return u ? '<a class="link" href="'+u[1]+'" target="_blank" rel="noopener">'+u[0]+' ↗</a>' : '—';}}
 ];
 
 function celdaModelo(a){
