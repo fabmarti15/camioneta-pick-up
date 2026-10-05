@@ -60,6 +60,22 @@
   td a.link:hover{text-decoration:underline}
   .modelo{font-weight:600}
   .modelo span{display:block;font-weight:400;font-size:11px;color:var(--gris);font-style:normal}
+  .analisis{min-width:1100px;width:100%;table-layout:fixed}
+  .analisis th,.analisis td{text-align:left;white-space:normal;vertical-align:top;padding:14px;line-height:1.5}
+  .analisis th{cursor:default;background:#f7f7f7}
+  .analisis th::after{content:none}
+  .analisis th:first-child{width:155px}
+  .analisis th:nth-child(2){width:135px}
+  .analisis th:nth-child(3){width:175px}
+  .analisis th:nth-child(4){width:275px}
+  .analisis th:nth-child(5){width:175px}
+  .analisis p{margin:0 0 8px}
+  .analisis p:last-child{margin-bottom:0}
+  .analisis a,.nota a{color:var(--azul)}
+  .analisis .fuente{display:block;font-size:11px;margin-top:8px}
+  .analisis .estado{display:block;font-size:11px;color:var(--gris);margin-top:4px}
+  .decision{border-left:3px solid var(--azul);padding:10px 14px;background:#f7fafc;font-size:13px;margin:14px 0}
+  .scroll:focus-visible{outline:2px solid var(--azul);outline-offset:3px}
   .tag{font-size:10px;font-weight:600;color:var(--verde)}
   .tagr{font-size:10px;font-weight:400;color:#999;font-style:normal}
 
@@ -102,17 +118,73 @@
   .caja{border:1px solid var(--linea);border-radius:6px;padding:12px 14px;font-size:13px;flex:1;min-width:230px}
   .caja b{display:block;font-size:12px;color:var(--gris);font-weight:500;margin-bottom:3px}
   footer{margin-top:44px;padding-top:16px;border-top:1px solid var(--linea);color:var(--gris);font-size:12px}
-  @media(max-width:700px){ .fila .n{width:130px} body{padding:20px 12px 48px} }
+  @media(max-width:700px){
+    body{padding:20px 12px 48px}
+    .fila{flex-wrap:wrap;gap:6px}
+    .fila .n{width:100%}
+  }
 </style>
 </head>
 <body>
 <div class="wrap">
 
 <h1>Pick-ups chicas en Chile</h1>
-<p class="sub">Las nueve pick-ups son doble cabina; los tres autos de referencia van marcados. Tabla completa: dimensiones, precios y los cinco componentes del costo a 5 años, modelo por modelo. Apaga las columnas que no te sirvan con los botones de arriba — tu elección queda guardada en este navegador. Haz clic en cualquier encabezado para ordenar; la primera columna queda fija al desplazar. La columna <b>TOTAL 5 años</b>, fija en el borde derecho, es la suma de combustible + permiso + seguro + mantención + depreciación: el costo real de tener el vehículo. Supuestos: 10.000 km al año, bencina 93 a $1.497/L, luz de casa $160/kWh.</p>
+<p class="sub">Diez versiones de pick-up doble cabina y tres autos de referencia. Compara tamaño, precios y costo estimado a 5 años. El análisis de las camionetas chicas está abajo de la tabla. Apaga columnas con los botones y haz clic en los encabezados para ordenar. Precios y costos de la comparación original: septiembre de 2026; análisis revisado el 5 de octubre de 2026. N/D: dato pendiente de cotización, no un costo de cero.</p>
 
 <div class="chips" id="chips"></div>
 <div class="scroll"><table id="tabla"><thead><tr></tr></thead><tbody></tbody></table></div>
+
+<section id="analisis-chicas" aria-labelledby="titulo-analisis">
+<h2 id="titulo-analisis">Camionetas chicas: análisis y comentarios</h2>
+<p class="nota">Criterio: doble cabina y menos de 4,70 m. Oroch y Montana se incluyen como alternativas al límite. Las cuatro familias son de venta nueva en Chile. No hay tasas comparables de averías para ordenarlas por confiabilidad; los comentarios de dueños no son estadísticas. Seguridad y durabilidad se evalúan por separado. En celular, desliza la tabla hacia los lados.</p>
+<div class="scroll" tabindex="0" role="region" aria-label="Tabla de análisis de camionetas chicas, desplazable horizontalmente">
+<table class="analisis" id="tabla-analisis">
+<thead><tr><th scope="col">Modelo</th><th scope="col">Tamaño y cabina</th><th scope="col">A favor</th><th scope="col">Fallas, mantenimiento y respaldo</th><th scope="col">Seguridad</th><th scope="col">Comentario para elegir</th></tr></thead>
+<tbody>
+<tr>
+<th scope="row">RAM 700 1.3<span class="estado">SLT / Bighorn · manual o CVT</span></th>
+<td><b>4,474 m</b><br>Cumple.<br>4 puertas; carga declarada de 650 kg.</td>
+<td>Acceso cómodo a la segunda fila y tamaño urbano. Motor sin turbo de 99 HP; consumo homologado de 14,9–16,1 km/l según versión.</td>
+<td><p><b>Testimonios:</b> hay reportes eléctricos, alternador, inyección, ruidos y demoras de repuestos. Mezclan años y países y no permiten establecer frecuencia ni concluir que la versión actual tenga todas esas fallas.</p><p><b>Confirmado en Chile:</b> campañas para ciertas unidades vendidas en 2021 por pestillos y bomba de combustible. Se verifican por chasis.</p><span class="fuente"><a href="https://www.opinautos.com/ram/700/defectos/sistema-electrico" target="_blank" rel="noopener">Reportes de dueños</a> · <a href="https://www.sernac.cl/portal/619/w3-article-63356.html" target="_blank" rel="noopener">SERNAC: puertas</a> · <a href="https://www.sernac.cl/portal/619/w3-article-65311.html" target="_blank" rel="noopener">SERNAC: bomba</a></span></td>
+<td>4 airbags y ESC. La doble cabina obtuvo <b>1 estrella en Latin NCAP 2022</b>. No hay un resultado nuevo equivalente verificado aquí.<span class="fuente"><a href="https://www.latinncap.com/es/resultado/166/ram-700-cabina-doble-%2B-4-airbags" target="_blank" rel="noopener">Prueba Latin NCAP</a></span></td>
+<td>Práctica si el largo es estricto y necesitas cuatro puertas. El 1.3 queda justo con carga y pendientes. <b>No está acreditada como la más confiable.</b><span class="fuente"><a href="https://www.ram.com/cl/ram-700.html" target="_blank" rel="noopener">Versiones Chile</a> · <a href="https://noticias.autocosmos.cl/2023/06/14/test-drive-ram-700-cvt-la-nueva-opcion-de-camioneta-recreativa" target="_blank" rel="noopener">Prueba de conducción CVT</a></span></td>
+</tr>
+<tr>
+<th scope="row">Volkswagen Saveiro 1.6<span class="estado">Doble cabina · manual</span></th>
+<td><b>4,493 m</b><br>Cumple.<br>5 asientos, pero solo <b>2 puertas</b>.</td>
+<td>Motor sin turbo de 110 HP y caja manual de cinco marchas. Mecánica de menor complejidad que las alternativas turbo; consumo mixto homologado de 13,0 km/l.</td>
+<td><p>La sencillez mecánica es una ventaja, pero no demuestra una menor tasa de fallas.</p><p><b>Confirmado en Chile:</b> alerta por airbag del pasajero para determinadas unidades vendidas en 2024, publicada en octubre de 2025. Revisar chasis y reparación.</p><span class="fuente"><a href="https://www.sernac.cl/portal/619/w3-propertyvalue-63397.html" target="_blank" rel="noopener">Alertas SERNAC Saveiro</a></span></td>
+<td>2 airbags frontales y ESC. No se dispone aquí de una prueba de choque actual comparable con las otras candidatas.</td>
+<td>Considerarla si viajan principalmente una o dos personas. El acceso y espacio trasero penalizan el uso familiar frecuente. <b>No hay evidencia suficiente para declararla más confiable que RAM.</b><span class="fuente"><a href="https://www.volkswagen.cl/dam/files/94fb1db15ab761e28823f3d10525482a5613d8f2/05f7f448f651cbecc5d64eed9e364520/dfd8504f-6ad2-4fe8-b53f-38d58b2f2f87/FT-Nueva-Saveiro-PA3-%281%29-copy1" target="_blank" rel="noopener">Ficha Volkswagen Chile</a></span></td>
+</tr>
+<tr>
+<th scope="row">Chevrolet Montana 1.2 turbo<span class="estado">Manual o automática según versión</span></th>
+<td><b>4,717 m</b><br>Se pasa por <b>1,7 cm</b>.<br>4 puertas; carga declarada de 600 kg.</td>
+<td>130 HP y 190 Nm en la versión comparada. Más torque que RAM 1.3 y Saveiro; cuatro puertas y caja de carga de 874 litros.</td>
+<td><p><b>Punto a revisar:</b> distribución por correa bañada en aceite. Exige respetar el lubricante y mantenimiento del año y motor de la unidad; el manual chileno 2026 especifica dexos 1 / SAE 0W20.</p><p>No se verificó una tasa de averías en Chile que permita llamarla la más confiable. La existencia de la correa no demuestra por sí sola una falla.</p><span class="fuente"><a href="https://www.chevrolet.com.br/blog/como-funciona-correia-banhada-oleo-veiculos-chevrolet" target="_blank" rel="noopener">Chevrolet: sistema de correa</a> · <a href="https://www.chevrolet.cl/content/dam/chevrolet/south-america/chile/espanol/index/visid/manuales/tab-years/pickups/montana/manual-propietarios/2026-manual-propietario-montana.pdf" target="_blank" rel="noopener">Manual Chile 2026</a></span></td>
+<td>6 airbags, ESC e ISOFIX en las versiones de la ficha chilena citada. Más airbags no equivale a una clasificación de choque.<span class="fuente"><a href="https://www.chevrolet.cl/content/dam/chevrolet/south-america/chile/espanol/index/pickups-and-trucks/2023-montana/pdf/ficha-tecnica-montana.pdf" target="_blank" rel="noopener">Ficha Chevrolet Chile</a></span></td>
+<td><b>Candidata a probar si caben 4,717 m:</b> combina cuatro puertas, mayor torque y más airbags. Antes de decidir, confirmar la versión cotizada y su plan de mantenimiento.</td>
+</tr>
+<tr>
+<th scope="row">Renault Oroch 1.6 Zen<span class="estado">Manual · 4×2</span></th>
+<td><b>4,700 m exactos</b><br>Entra con límite inclusivo; no con “menos de”.<br>4 puertas.</td>
+<td>Motor sin turbo de aproximadamente 117 HP, caja manual y suspensión trasera independiente. Carga declarada de 650 kg.</td>
+<td>La combinación sin turbo y manual reduce complejidad frente a Oroch 1.3 turbo CVT. No hay datos comparables para afirmar que falle menos. Verificar historial de mantenimiento en usadas y campañas por chasis.</td>
+<td>2 airbags frontales y ESC según ficha chilena. Equipamiento de airbags limitado para una compra familiar.</td>
+<td>Interesante por espacio y mecánica sencilla si admites <b>4,70 m exactos</b>. Confirmar el largo de la unidad y sus accesorios.<span class="fuente"><a href="https://www.renault.cl/media/abakz03v/oroch-ft.pdf" target="_blank" rel="noopener">Ficha Renault Chile</a></span></td>
+</tr>
+<tr>
+<th scope="row">Renault Oroch 1.3 turbo<span class="estado">Intens CVT · sin paquete Outsider</span></th>
+<td><b>4,700 m</b> sin la extensión exterior.<br>La ficha indica hasta <b>4,719 m</b> en Outsider; verificar versión.</td>
+<td>250 Nm: mayor torque que las otras candidatas. Caja CVT y suspensión trasera independiente.</td>
+<td>Turbo y CVT añaden complejidad frente a la Zen 1.6 manual. Eso no demuestra más averías. No se dispone de estadísticas locales comparables de fallas o de tiempos de repuestos.</td>
+<td>2 airbags frontales y ESC según ficha chilena. La potencia no resuelve la limitación de airbags.</td>
+<td>Priorizarla si buscas respuesta del motor y automática y cabe el largo real. <b>No es la opción de menor complejidad mecánica.</b><span class="fuente"><a href="https://www.renault.cl/media/abakz03v/oroch-ft.pdf" target="_blank" rel="noopener">Ficha Renault Chile</a></span></td>
+</tr>
+</tbody></table></div>
+<p class="decision"><b>Para decidir:</b> con menos de 4,70 m y cuatro puertas, la RAM 700 es la candidata convencional identificada, con reservas de seguridad y confiabilidad. Si admites 4,717 m, añade la Montana a las pruebas. Saveiro y Oroch 1.6 manual ofrecen mecánica más sencilla, con limitaciones para pasajeros y seguridad. <b>No hay un ganador demostrado de confiabilidad.</b></p>
+<p class="nota">DFSK C22 (4,60 m) y Changan MS201 (4,66 m) cumplen el largo, pero se excluyen de las candidatas por su formato de mini camión de carga. Fiat Strada no se cuenta como otra opción nueva: la generación actual se vende aquí como RAM 700. Las campañas antiguas se aplican por chasis y no se extrapolan a todos los vehículos nuevos.</p>
+</section>
 
 <div class="cajas" id="cajas"></div>
 
@@ -138,9 +210,10 @@
   <p><b>Energía.</b> Bencina 93 a $1.497/L (ENAP, 10 sep 2026). Electricidad domiciliaria $160/kWh (BT1, Región Metropolitana); carga rápida pública $500/kWh. Consumos eléctricos: Riddara RD6 21 kWh/100 km, Maxus T90 26,8, JAC T9 27,8. La RD6 PHEV se calcula con uso mixto 70% eléctrico / 30% bencina. Rendimientos a bencina son los homologados: en uso real, resta entre 10% y 20%.</p>
   <p><b>Costo a 5 años.</b> 10.000 km al año, 50.000 km en total. Permiso de circulación con la tabla progresiva sobre tasación fiscal, rebaja del 75% para eléctricas e híbridas enchufables (SII 2026) y tasación bajando 12% al año. Seguro estimado en 2,2% del valor al año. Mantención una vez al año. Depreciación a 5 años: 45% en RAM, Chevrolet, Renault y Volkswagen; 48% en Škoda; 38% en Toyota; 60% en Riddara, Maxus y JAC, por el castigo de reventa que hoy tienen las marcas chinas nuevas. Ese supuesto es el más incierto de todos y es el que decide la comparación.</p>
   <p><b>Autos de referencia.</b> La Škoda Kodiaq es la de Fabián; su costo a 5 años está calculado como si se comprara nueva hoy (Selection 1.5 TSI mHEV), solo para comparar. Del Golf, en Chile hoy solo se vende el GTI, un deportivo: sirve como referencia de tamaño, no de precio. El Corolla va en versión híbrida, la que se vende.</p>
-  <p><b>Precios.</b> Lista con IVA, sin bonos ni descuento de negociación. El neto es lo que factura el concesionario a empresa; con factura, el IVA lo recuperas. La Maxus, la JAC y la Kodiaq no tienen precio neto publicado: se calculó dividiendo por 1,19.</p>
+  <p><b>Precios.</b> Se conservan los precios y supuestos de la comparación de septiembre de 2026; no son cotizaciones nuevas de octubre. La Saveiro se añade con dimensiones y consumo; precio, permiso, seguro, mantención, depreciación y total quedan N/D hasta contar con una cotización comparable. No participa en el ranking de costo total. La Maxus, la JAC y la Kodiaq no tienen precio neto publicado: se calculó dividiendo por 1,19.</p>
   <p><b>Comprar.</b> Los enlaces van al sitio del distribuidor oficial en Chile de cada marca. Ojo con la Maxus T90 EV: el precio de esta tabla ($33.308.100 con IVA) corresponde a la generación anterior; el sitio de Andes Motor hoy ofrece la T90 EV nueva desde $52.990.000 + IVA, casi el doble.</p>
   <p><b>Ancho con espejos.</b> La tabla usa el ancho de carrocería. La RAM 700 mide 1.967 mm con los espejos desplegados, 23 cm más que sus 1.732 mm de carrocería: para maniobrar en un estacionamiento estrecho, esa es la medida que manda.</p>
+  <p><b>Saveiro.</b> La ficha chilena publica 1,893 m de ancho con espejos. Para comparar carrocerías, se usa 1,721 m sin espejos del <a href="https://www.vw.com.br/idhub/content/dam/onehub_pkw/importers/br/literatura-de-bordo/manual-saveiro/Manual_instru%C3%A7oes_Saveiro_27A.5B1.SAV_66.pdf" target="_blank" rel="noopener">manual Volkswagen</a>. Largo, altura, entre ejes y consumo se toman de la ficha chilena.</p>
   <p><b>Siluetas.</b> Dibujos esquemáticos a escala con las medidas oficiales, no fotografías.</p>
   <p>Fuentes: RAM Chile, Autofact, Autocosmos, Rutamotor, Riddara Chile, Maxus Chile, JAC Chile, Chileautos, ENAP, SII.</p>
 </footer>
@@ -148,9 +221,10 @@
 </div>
 
 <script>
-const AUTOS = [{"n": "RAM 700 SLT CD 1.3", "sub": "Ex Fiat Strada · bencina", "forma": "pickup", "L": 4.474, "A": 1.732, "H": 1.6, "WB": 2.737, "kml": 14.9, "kwh": null, "neto": 15490000, "iva": 18433100, "ccasa": 10047, "crap": 10047, "e": 5023500, "p": 2704512, "s": 2027641, "m": 950000, "d": 8294895, "t": 19000548, "mes": 316676, "km": 380, "cls": ""}, {"n": "RAM 700 Bighorn CD 1.3 CVT", "sub": "Bencina, automática", "forma": "pickup", "L": 4.474, "A": 1.732, "H": 1.6, "WB": 2.737, "kml": 16.1, "kwh": null, "neto": 17990000, "iva": 21408100, "ccasa": 9298, "crap": 9298, "e": 4649000, "p": 3231386, "s": 2354891, "m": 950000, "d": 9633645, "t": 20818922, "mes": 346982, "km": 416, "cls": ""}, {"n": "Chevrolet Montana 1.2T LT", "sub": "Bencina turbo 130 HP", "forma": "pickup", "L": 4.717, "A": 1.798, "H": 1.659, "WB": 2.8, "kml": 14.25, "kwh": null, "neto": 16290000, "iva": 19385100, "ccasa": 10505, "crap": 10505, "e": 5252500, "p": 2873112, "s": 2132361, "m": 1050000, "d": 8723295, "t": 20031268, "mes": 333854, "km": 401, "cls": ""}, {"n": "Renault Oroch 1.6 Zen 4×2", "sub": "Bencina 115 HP · la más barata", "forma": "pickup", "L": 4.72, "A": 1.82, "H": 1.69, "WB": 2.829, "kml": 11.0, "kwh": null, "neto": 14090000, "iva": 16767100, "ccasa": 13609, "crap": 13609, "e": 6804500, "p": 2409462, "s": 1844381, "m": 1000000, "d": 7545195, "t": 19603538, "mes": 326726, "km": 392, "cls": ""}, {"n": "Renault Oroch 1.3T CVT Intens", "sub": "Bencina turbo 156 HP", "forma": "pickup", "L": 4.72, "A": 1.82, "H": 1.69, "WB": 2.829, "kml": 12.7, "kwh": null, "neto": 17290000, "iva": 20575100, "ccasa": 11787, "crap": 11787, "e": 5893500, "p": 3083861, "s": 2263261, "m": 1000000, "d": 9258795, "t": 21499417, "mes": 358324, "km": 430, "cls": ""}, {"n": "Riddara RD6 PHEV Pro", "sub": "Híbrida enchufable · 80+ km eléctricos", "forma": "pickup", "L": 5.26, "A": 1.9, "H": 1.865, "WB": 3.12, "kml": null, "kwh": null, "neto": 23990000, "iva": 28548100, "ccasa": 6099, "crap": 10383, "e": 3049500, "p": 1123971, "s": 3140291, "m": 900000, "d": 17128860, "t": 25342622, "mes": 422377, "km": 507, "cls": ""}, {"n": "Riddara RD6 Air", "sub": "100% eléctrica · 63 kWh · 373 km NEDC", "forma": "pickup", "L": 5.26, "A": 1.9, "H": 1.865, "WB": 3.12, "kml": null, "kwh": 21.0, "neto": 42990000, "iva": 51158100, "ccasa": 3360, "crap": 10500, "e": 1680000, "p": 2125032, "s": 5627391, "m": 550000, "d": 30694860, "t": 40677283, "mes": 677955, "km": 814, "cls": ""}, {"n": "Maxus T90 EV", "sub": "100% eléctrica · 88,5 kWh · 471 km NEDC", "forma": "pickup", "L": 5.365, "A": 1.998, "H": 1.809, "WB": 3.155, "kml": null, "kwh": 26.8, "neto": 27989160, "iva": 33308100, "ccasa": 4288, "crap": 13400, "e": 2144000, "p": 1334721, "s": 3663891, "m": 550000, "d": 19984860, "t": 27677472, "mes": 461291, "km": 554, "cls": ""}, {"n": "JAC T9 EV AWD Advance", "sub": "100% eléctrica 4×4 · 88 kWh · 317 km WLTP", "forma": "pickup", "L": 5.33, "A": 1.965, "H": 1.92, "WB": 3.11, "kml": null, "kwh": 27.8, "neto": 37989160, "iva": 45208100, "ccasa": 4448, "crap": 13900, "e": 2224000, "p": 1861595, "s": 4972891, "m": 550000, "d": 27124860, "t": 36733346, "mes": 612222, "km": 735, "cls": ""}, {"n": "Škoda Kodiaq 2025 Selection", "sub": "SUV 7 asientos · 1.5 TSI mHEV", "forma": "suv", "L": 4.758, "A": 1.864, "H": 1.659, "WB": 2.791, "kml": 12.5, "kwh": null, "neto": 32344538, "iva": 38490000, "ccasa": 11976, "crap": 11976, "e": 5988000, "p": 6256599, "s": 4233900, "m": 1750000, "d": 18475200, "t": 36703699, "mes": 611728, "km": 734, "cls": "mia"}, {"n": "VW Golf GTI", "sub": "Único Golf a la venta en Chile", "forma": "hatch", "L": 4.284, "A": 1.789, "H": 1.456, "WB": 2.62, "kml": 11.0, "kwh": null, "neto": 36126050, "iva": 42990000, "ccasa": 13609, "crap": 13609, "e": 6804500, "p": 7053552, "s": 4728900, "m": 1600000, "d": 19345500, "t": 39532452, "mes": 658874, "km": 791, "cls": "ref"}, {"n": "Toyota Corolla XLI Hybrid", "sub": "Sedán híbrido", "forma": "sedan", "L": 4.63, "A": 1.78, "H": 1.435, "WB": 2.7, "kml": 20.0, "kwh": null, "neto": 20831933, "iva": 24790000, "ccasa": 7485, "crap": 7485, "e": 3742500, "p": 3830322, "s": 2726900, "m": 1000000, "d": 9420200, "t": 20719922, "mes": 345332, "km": 414, "cls": "ref"}];
+const AUTOS = [{"n": "RAM 700 SLT CD 1.3", "sub": "Fiat Strada bajo marca RAM · bencina", "forma": "pickup", "L": 4.474, "A": 1.732, "H": 1.6, "WB": 2.737, "kml": 14.9, "kwh": null, "neto": 15490000, "iva": 18433100, "ccasa": 10047, "crap": 10047, "e": 5023500, "p": 2704512, "s": 2027641, "m": 950000, "d": 8294895, "t": 19000548, "mes": 316676, "km": 380, "cls": ""}, {"n": "RAM 700 Bighorn CD 1.3 CVT", "sub": "Bencina, automática", "forma": "pickup", "L": 4.474, "A": 1.732, "H": 1.6, "WB": 2.737, "kml": 16.1, "kwh": null, "neto": 17990000, "iva": 21408100, "ccasa": 9298, "crap": 9298, "e": 4649000, "p": 3231386, "s": 2354891, "m": 950000, "d": 9633645, "t": 20818922, "mes": 346982, "km": 416, "cls": ""}, {"n": "Volkswagen Saveiro 1.6 CD MT", "sub": "110 HP · manual · doble cabina de 2 puertas · precio por cotizar", "forma": "pickup", "L": 4.493, "A": 1.721, "H": 1.561, "WB": 2.752, "kml": 13.0, "kwh": null, "neto": null, "iva": null, "ccasa": 11515, "crap": 11515, "e": 5757500, "p": null, "s": null, "m": null, "d": null, "t": null, "mes": null, "km": null, "cls": "", "puertas": 2}, {"n": "Chevrolet Montana 1.2T LT", "sub": "Bencina turbo 130 HP · 1,7 cm sobre 4,70 m", "forma": "pickup", "L": 4.717, "A": 1.798, "H": 1.659, "WB": 2.8, "kml": 14.25, "kwh": null, "neto": 16290000, "iva": 19385100, "ccasa": 10505, "crap": 10505, "e": 5252500, "p": 2873112, "s": 2132361, "m": 1050000, "d": 8723295, "t": 20031268, "mes": 333854, "km": 401, "cls": ""}, {"n": "Renault Oroch 1.6 Zen 4×2", "sub": "Bencina 117 HP · manual · 4,700 m exactos", "forma": "pickup", "L": 4.7, "A": 1.821, "H": 1.631, "WB": 2.829, "kml": 11.0, "kwh": null, "neto": 14090000, "iva": 16767100, "ccasa": 13609, "crap": 13609, "e": 6804500, "p": 2409462, "s": 1844381, "m": 1000000, "d": 7545195, "t": 19603538, "mes": 326726, "km": 392, "cls": ""}, {"n": "Renault Oroch 1.3T CVT Intens", "sub": "Bencina turbo 156 HP", "forma": "pickup", "L": 4.7, "A": 1.821, "H": 1.694, "WB": 2.829, "kml": 12.7, "kwh": null, "neto": 17290000, "iva": 20575100, "ccasa": 11787, "crap": 11787, "e": 5893500, "p": 3083861, "s": 2263261, "m": 1000000, "d": 9258795, "t": 21499417, "mes": 358324, "km": 430, "cls": ""}, {"n": "Riddara RD6 PHEV Pro", "sub": "Híbrida enchufable · 80+ km eléctricos", "forma": "pickup", "L": 5.26, "A": 1.9, "H": 1.865, "WB": 3.12, "kml": null, "kwh": null, "neto": 23990000, "iva": 28548100, "ccasa": 6099, "crap": 10383, "e": 3049500, "p": 1123971, "s": 3140291, "m": 900000, "d": 17128860, "t": 25342622, "mes": 422377, "km": 507, "cls": ""}, {"n": "Riddara RD6 Air", "sub": "100% eléctrica · 63 kWh · 373 km NEDC", "forma": "pickup", "L": 5.26, "A": 1.9, "H": 1.865, "WB": 3.12, "kml": null, "kwh": 21.0, "neto": 42990000, "iva": 51158100, "ccasa": 3360, "crap": 10500, "e": 1680000, "p": 2125032, "s": 5627391, "m": 550000, "d": 30694860, "t": 40677283, "mes": 677955, "km": 814, "cls": ""}, {"n": "Maxus T90 EV", "sub": "100% eléctrica · 88,5 kWh · 471 km NEDC", "forma": "pickup", "L": 5.365, "A": 1.998, "H": 1.809, "WB": 3.155, "kml": null, "kwh": 26.8, "neto": 27989160, "iva": 33308100, "ccasa": 4288, "crap": 13400, "e": 2144000, "p": 1334721, "s": 3663891, "m": 550000, "d": 19984860, "t": 27677472, "mes": 461291, "km": 554, "cls": ""}, {"n": "JAC T9 EV AWD Advance", "sub": "100% eléctrica 4×4 · 88 kWh · 317 km WLTP", "forma": "pickup", "L": 5.33, "A": 1.965, "H": 1.92, "WB": 3.11, "kml": null, "kwh": 27.8, "neto": 37989160, "iva": 45208100, "ccasa": 4448, "crap": 13900, "e": 2224000, "p": 1861595, "s": 4972891, "m": 550000, "d": 27124860, "t": 36733346, "mes": 612222, "km": 735, "cls": ""}, {"n": "Škoda Kodiaq 2025 Selection", "sub": "SUV 7 asientos · 1.5 TSI mHEV", "forma": "suv", "L": 4.758, "A": 1.864, "H": 1.659, "WB": 2.791, "kml": 12.5, "kwh": null, "neto": 32344538, "iva": 38490000, "ccasa": 11976, "crap": 11976, "e": 5988000, "p": 6256599, "s": 4233900, "m": 1750000, "d": 18475200, "t": 36703699, "mes": 611728, "km": 734, "cls": "mia"}, {"n": "VW Golf GTI", "sub": "Único Golf a la venta en Chile", "forma": "hatch", "L": 4.284, "A": 1.789, "H": 1.456, "WB": 2.62, "kml": 11.0, "kwh": null, "neto": 36126050, "iva": 42990000, "ccasa": 13609, "crap": 13609, "e": 6804500, "p": 7053552, "s": 4728900, "m": 1600000, "d": 19345500, "t": 39532452, "mes": 658874, "km": 791, "cls": "ref"}, {"n": "Toyota Corolla XLI Hybrid", "sub": "Sedán híbrido", "forma": "sedan", "L": 4.63, "A": 1.78, "H": 1.435, "WB": 2.7, "kml": 20.0, "kwh": null, "neto": 20831933, "iva": 24790000, "ccasa": 7485, "crap": 7485, "e": 3742500, "p": 3830322, "s": 2726900, "m": 1000000, "d": 9420200, "t": 20719922, "mes": 345332, "km": 414, "cls": "ref"}];
 
 const URLS = {
+  'Volkswagen Saveiro 1.6 CD MT': ['Volkswagen Chile', 'https://www.volkswagen.cl/vehiculos-comerciales'],
   'RAM 700 SLT CD 1.3':            ['RAM Chile',        'https://www.ram.com/cl/ram-700.html'],
   'RAM 700 Bighorn CD 1.3 CVT':    ['RAM Chile',        'https://www.ram.com/cl/ram-700.html'],
   'Chevrolet Montana 1.2T LT':     ['Chevrolet Chile',  'https://www.chevrolet.cl/pickups/pickup-montana'],
@@ -165,8 +239,9 @@ const URLS = {
   'Toyota Corolla XLI Hybrid':     ['Toyota Chile',     'https://toyota.cl/modelos/sedan/corolla-sedan/']
 };
 const REF = { l: 4.474, h: 1.60, wb: 2.737, forma: 'pickup' };
-const cl = v => '$' + Math.round(v).toLocaleString('es-CL');
+const cl = v => v == null ? 'N/D' : '$' + Math.round(v).toLocaleString('es-CL');
 const m2 = v => v.toFixed(2).replace('.', ',');
+const m3 = v => v.toFixed(3).replace('.', ',');
 let uid = 0;
 
 /* ---------- siluetas ---------- */
@@ -201,9 +276,9 @@ function svgPerfil(forma, L, H, WB, s){
 const COLS = [
   {t:'Modelo', cls:'txt pin', v:a=>a.n, r:a=>celdaModelo(a)},
   {t:'Cabina', sub:'carrocería', cls:'txt', v:a=>a.forma,
-   r:a=>({pickup:'<b>Doble</b>',suv:'SUV',hatch:'Hatchback',sedan:'Sedán'})[a.forma]},
+   r:a=>a.forma === 'pickup' ? '<b>Doble</b><br>'+(a.puertas||4)+' puertas' : ({suv:'SUV',hatch:'Hatchback',sedan:'Sedán'})[a.forma]},
   {t:'Silueta', sub:'vs RAM 700', cls:'txt', v:a=>a.L, r:a=>celdaSilueta(a)},
-  {t:'Largo', sub:'m', v:a=>a.L, r:a=>m2(a.L)},
+  {t:'Largo', sub:'m', v:a=>a.L, r:a=>m3(a.L)},
   {t:'Ancho', sub:'m', v:a=>a.A, r:a=>m2(a.A)},
   {t:'Alto', sub:'m', v:a=>a.H, r:a=>m2(a.H)},
   {t:'Entre ejes', sub:'m', v:a=>a.WB, r:a=>m2(a.WB)},
@@ -217,7 +292,7 @@ const COLS = [
   {t:'Seguro', sub:'5 años', v:a=>a.s, r:a=>cl(a.s)},
   {t:'Mantención', sub:'5 años', v:a=>a.m, r:a=>cl(a.m)},
   {t:'Depreciación', sub:'5 años', v:a=>a.d, r:a=>cl(a.d)},
-  {t:'TOTAL 5 años', sub:'todo incluido', cls:'pinR', v:a=>a.t, r:a=>'<span class="tot '+(a.t<19500000?'ok':a.t>35000000?'mal':'')+'">'+cl(a.t)+'</span>'},
+  {t:'TOTAL 5 años', sub:'todo incluido', cls:'pinR', v:a=>a.t, r:a=>a.t == null ? 'N/D · por cotizar' : '<span class="tot '+(a.t<19500000?'ok':a.t>35000000?'mal':'')+'">'+cl(a.t)+'</span>'},
   {t:'Al mes', sub:'$', v:a=>a.mes, r:a=>cl(a.mes)},
   {t:'Por km', sub:'$', v:a=>a.km, r:a=>cl(a.km)},
   {t:'Comprar', sub:'distribuidor oficial', cls:'txt', v:a=>(URLS[a.n]||['zz'])[0],
@@ -265,6 +340,8 @@ function render(){
   let lista = AUTOS.slice();
   if (sortCol !== null) lista.sort((x,y) => {
     const a = COLS[sortCol].v(x), b = COLS[sortCol].v(y);
+    if (a == null) return b == null ? 0 : 1;
+    if (b == null) return -1;
     return a < b ? (asc?-1:1) : a > b ? (asc?1:-1) : 0;
   });
   document.querySelector('#tabla tbody').innerHTML = lista.map(filaHTML).join('');
@@ -297,7 +374,7 @@ render(); renderChips();
 
 /* ---------- cajas ---------- */
 (function(){
-  const orden = AUTOS.slice().sort((a,b) => a.t - b.t);
+  const orden = AUTOS.filter(a => a.t != null).sort((a,b) => a.t - b.t);
   const barato = orden[0], caro = orden[orden.length-1];
   const evs = AUTOS.filter(a => a.kwh).sort((a,b) => a.t - b.t);
   const mia = AUTOS.find(a => a.cls === 'mia');
@@ -340,10 +417,11 @@ render(); renderChips();
 /* ---------- TCO apilado ---------- */
 (function(){
   const c = document.getElementById('tco');
-  const max = Math.max(...AUTOS.map(a => a.t));
+  if (AUTOS.some(a => a.t == null)) c.insertAdjacentHTML('beforeend','<p class="nota">Saveiro: costo total pendiente de cotización; no se representa como cero.</p>');
+  const max = Math.max(...AUTOS.filter(a => a.t != null).map(a => a.t));
   const cols = ['var(--c1)','var(--c2)','var(--c3)','var(--c4)','var(--c5)'];
   const et = ['Combustible','Permiso','Seguro','Mantención','Depreciación'];
-  AUTOS.slice().sort((a,b) => a.t - b.t).forEach(a => {
+  AUTOS.filter(a => a.t != null).sort((a,b) => a.t - b.t).forEach(a => {
     const v = [a.e,a.p,a.s,a.m,a.d];
     const segs = v.map((x,i) => '<i style="background:'+cols[i]+';width:'+(x/a.t*100).toFixed(2)+'%" title="'+et[i]+': '+cl(x)+'"></i>').join('');
     c.insertAdjacentHTML('beforeend',
