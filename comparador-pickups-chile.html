@@ -29,6 +29,7 @@
   .chip.preset{border-style:dashed;color:var(--tinta)}
   .chips .sep{width:1px;height:20px;background:var(--linea);margin:0 4px}
   .chips .t{font-size:12px;color:#999;margin-right:2px}
+  .chips details{width:100%}.chips summary{cursor:pointer;font-size:12px;color:var(--gris);padding:8px 0;min-height:40px}.opciones-columnas{display:flex;flex-wrap:wrap;gap:6px}
   .scroll{overflow-x:auto;border:1px solid var(--linea);border-radius:6px}
   table{border-collapse:separate;border-spacing:0;font-size:12.5px;min-width:100%}
   th,td{padding:8px 10px;text-align:right;border-bottom:1px solid var(--linea);white-space:nowrap}
@@ -131,21 +132,51 @@
   .datos-modelo a{color:var(--azul);overflow-wrap:anywhere}
   .modelo .tag-nuevo{color:var(--azul);font-size:10px}
   @media(max-width:700px){.chip{min-height:40px}.datos-modelo summary{min-height:44px}th.pinR,td.pinR{position:static}th.pin,td.pin{min-width:180px;max-width:200px}.modelo{max-width:180px}.datos-modelo{max-width:180px}}
+
+.filtros{padding:14px;border:1px solid var(--linea);border-radius:8px;margin-bottom:16px;background:#fafafa}
+.filtro-linea{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.filtros select,.filtros button,.ocultar-modelo{font:inherit;border:1px solid #ccc;background:white;border-radius:6px;padding:8px 12px;min-height:42px;cursor:pointer}.filtros select{max-width:100%}#conteo{font-size:12px;color:var(--gris)}#selector-modelos summary{cursor:pointer;padding:12px 0;min-height:44px}#lista-modelos{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:4px;margin-top:10px}#lista-modelos label{display:flex;align-items:center;gap:8px;padding:8px 0;min-height:44px;font-size:12px}#lista-modelos label[hidden]{display:none}#lista-modelos input{width:18px;height:18px;flex:none}.ocultar-modelo{font-size:11px;margin-top:5px;min-height:36px;padding:5px 9px}.deltas{font-size:10px;color:#444;line-height:1.5}.rect-comparador{max-width:100%;flex:none}.sin-resultados td{text-align:left;white-space:normal;padding:20px}.datos-modelo{max-width:250px}@media(max-width:700px){#lista-modelos{grid-template-columns:1fr}.ocultar-modelo{min-height:44px}.filtros{padding:12px}.rect-comparador{max-width:100%}}
 </style>
 </head>
 <body>
 <div class="wrap">
 
 <h1>Autos pequeños y pick-ups en Chile</h1>
-<p class="sub">19 vehículos y versiones: pick-ups, autos pequeños y referencias. Incorporaciones revisadas el 14 de octubre de 2026. Compara tamaño y precio; abre «Datos y fuentes» en cada modelo nuevo. Los costos originales son de septiembre de 2026. N/D significa dato pendiente, nunca costo cero. En celular, desliza la tabla hacia los lados.</p>
+<p class="sub">14 opciones nuevas, versiones superiores. Costos estimados para 10.000 km/año durante 5 años. Actualizado: 14 de octubre de 2026.</p>
 
-<p class="nota"><b>Agregados:</b> Lexus LBX Active, Corolla Sport hatchback usado, Yaris Sport S CVT, GR Yaris AT, Ford Maverick XLT y RAM Rampage Laramie. El GR es un deportivo distinto del Yaris convencional. Los seis aparecen también en las siluetas y estacionamientos.</p>
-<noscript><p class="nota">Activa JavaScript para ordenar la comparación completa. Incorporaciones:</p><ul><li><b>Lexus LBX Active 1.5 Hybrid</b>: 4,19 m de largo. SUV pequeño de lujo · híbrido CVT · 134 HP.</li><li><b>Toyota Corolla Sport SE 1.2T CVT</b>: 4,375 m de largo. Hatchback pequeño · usado, generación 2019 · no es el sedán.</li><li><b>Toyota Yaris Sport S 1.5 CVT</b>: 4,145 m de largo. Hatchback · tope de la gama Sport convencional · stock por confirmar.</li><li><b>Toyota GR Yaris 1.6T AT8</b>: 3,995 m de largo. Deportivo · 280 HP · AWD · 3 puertas / 4 plazas · bencina 97.</li><li><b>Ford Maverick XLT 2.0 AT AWD</b>: 5,073 m de largo. Pick-up · bencina turbo 238 HP · automática de 8 velocidades.</li><li><b>RAM Rampage Laramie 2.2 diésel AT9</b>: 5,028 m de largo. Pick-up · 200 HP · 4×4 · 4,5 cm más corta que Maverick XLT.</li></ul></noscript>
+<p class="nota"><b>Precios al contado, con IVA y sin exigir crédito.</b> Saveiro y Oroch: precio estimado y stock por confirmar. «≈» indica estimaciones. Fuentes y condiciones en cada modelo.</p>
+<div class="decision"><b>Tu Škoda Kodiaq: 4,758 × 1,864 m.</b> Referencia fija para los rectángulos. Corolla Cross híbrido SEG: SUV de 4,460 m; Yaris híbrido G: sedán de 4,425 m.</div>
+<noscript><p>JavaScript está desactivado. Comparación resumida de nuevos, sin filtros:</p><ul><li><b>Lexus LBX Active 1.5 Hybrid</b>: 4,19 × 1,825 m. Contado $32.590.000 (Contado calculado · 14 oct 2026); costo estimado 5 años $24.734.485.</li><li><b>Toyota Yaris Hybrid G e-CVT</b>: 4,425 × 1,74 m. Contado $21.790.000 (Contado · 14 oct 2026); costo estimado 5 años $16.621.250.</li><li><b>Toyota Corolla Cross Hybrid SEG</b>: 4,46 × 1,825 m. Contado $29.490.000 (Contado · stock por confirmar); costo estimado 5 años $21.601.772.</li><li><b>Volkswagen Golf GTI 2.0 DSG</b>: 4,289 × 1,789 m. Contado $43.990.000 (Contado · octubre 2026); costo estimado 5 años $37.115.630.</li><li><b>RAM 700 Laramie 1.0T CVT</b>: 4,48 × 1,732 m. Contado $21.051.100 (Contado con IVA · octubre 2026); costo estimado 5 años $20.085.318.</li><li><b>Volkswagen Saveiro Extreme 1.6 MT</b>: 4,493 × 1,721 m. Contado ≈ $19.300.000 (Estimado nuevo · stock por confirmar); costo estimado 5 años $19.114.340.</li><li><b>Chevrolet Montana Premier AT V</b>: 4,717 × 1,798 m. Contado $24.636.100 (Contado Coseche · 14 oct 2026); costo estimado 5 años $23.242.622.</li><li><b>Renault Oroch Intens Outsider 4×4</b>: 4,719 × 1,821 m. Contado ≈ $23.500.000 (Estimado nuevo · stock por confirmar); costo estimado 5 años $24.505.966.</li><li><b>Ford Maverick Tremor 2.0 AWD</b>: 5,073 × 1,844 m. Contado $40.210.100 (Contado sugerido · 14 oct 2026); costo estimado 5 años $36.789.209.</li><li><b>RAM Rampage R/T 2.0 AT9</b>: 5,028 × 1,886 m. Contado $41.876.100 (Contado con IVA · octubre 2026); costo estimado 5 años $38.292.456.</li><li><b>Riddara RD6 PHEV Ultra 4WD</b>: 5,26 × 1,9 m. Contado $35.688.100 (Contado calculado con IVA · 14 oct); costo estimado 5 años $32.405.051.</li><li><b>Riddara RD6 EV Ultra 4WD 86 kWh</b>: 5,26 × 1,9 m. Contado $53.538.100 (Contado calculado con IVA · 14 oct); costo estimado 5 años $43.669.251.</li><li><b>Maxus All New T90 EV GLX 4×4</b>: 5,5 × 1,997 m. Contado $68.413.100 (Contado con IVA · 14 oct 2026); costo estimado 5 años $56.337.468.</li><li><b>JAC T9 EV AWD Advance</b>: 5,33 × 1,965 m. Contado $50.206.100 (Todo medio de pago · 14 oct 2026); costo estimado 5 años $41.911.030.</li></ul></noscript>
+<section class="filtros" aria-label="Filtrar vehículos">
+<div class="filtro-linea"><label for="marca">Marca</label><select id="marca"><option value="">Todas las marcas</option></select><button id="mostrar-todos" type="button">Mostrar todos</button><span id="conteo" role="status" aria-live="polite"></span></div>
+<details id="selector-modelos"><summary>Elegir u ocultar modelos</summary><p class="nota">Desmarca los que no quieras comparar. La selección se guarda en este navegador.</p><button id="ocultar-todos" type="button">Desmarcar todos</button><div id="lista-modelos"></div></details>
+</section>
 <div class="chips" id="chips"></div>
 <div class="scroll"><table id="tabla"><thead><tr></tr></thead><tbody></tbody></table></div>
 
-<section id="analisis-chicas" aria-labelledby="titulo-analisis">
-<h2 id="titulo-analisis">Camionetas chicas: análisis y comentarios</h2>
+
+
+<div class="cajas" id="cajas"></div>
+
+<h2>Largo y ancho respecto a tu Škoda</h2>
+<div id="siluetas"></div>
+<p class="leyenda">Vista superior. Largo horizontal y ancho vertical. Contorno verde punteado: tu Škoda Kodiaq (4,758 × 1,864 m). Azul: vehículo comparado. Rojo: lo que sobresale del contorno. Las diferencias están en centímetros; «−» significa menor tamaño.</p>
+
+<h2>Huella en un estacionamiento</h2>
+<p class="nota">Vista desde arriba, estacionamiento de referencia de 2,40 × 5,00 m. En rojo, lo que sobresale.</p>
+<div class="planta" id="planta"></div>
+
+<h2>Costo total a 5 años, desglosado</h2>
+<div class="lg">
+  <span><b style="background:var(--c1)"></b>Combustible o carga</span>
+  <span><b style="background:var(--c2)"></b>Permiso de circulación</span>
+  <span><b style="background:var(--c3)"></b>Seguro</span>
+  <span><b style="background:var(--c4)"></b>Mantención</span>
+  <span><b style="background:var(--c5)"></b>Depreciación</span>
+</div>
+<div id="tco"></div>
+
+<details style="margin-top:32px"><summary style="cursor:pointer;padding:12px 0">Análisis anterior de camionetas chicas · versiones distintas de la tabla actual</summary><p class="nota">Investigación conservada del 5 de octubre. Sus conclusiones no se transfieren automáticamente a las versiones superiores de esta comparación, especialmente RAM 700 1.0 turbo y Oroch 4×4.</p><section id="analisis-chicas" aria-labelledby="titulo-analisis">
+<h2 id="titulo-analisis">Análisis anterior: otras versiones y motorizaciones</h2>
 <p class="nota">Investigación del 5 de octubre de 2026: pruebas y análisis originales de Brasil, Chile, Argentina y México. Criterio: doble cabina y menos de 4,70 m; Oroch y Montana se incluyen como alternativas al límite. Se priorizan calidad, durabilidad y facilidad de reparación, sin usar el precio para elegir. No se encontraron tasas comparables de averías de estas versiones: una prueba breve, un desmonte de una unidad o los comentarios de dueños no permiten medir cuál falla menos. En celular, desliza la tabla hacia los lados.</p>
 <div class="scroll" tabindex="0" role="region" aria-label="Tabla de análisis de camionetas chicas, desplazable horizontalmente">
 <table class="analisis" id="tabla-analisis">
@@ -206,39 +237,16 @@
 <p class="nota">Alcance: las pruebas brasileñas usan versiones flex y equipamientos que pueden diferir de Chile. El desmonte de Strada 1.3 no evalúa RAM 1.0 turbo ni sus cajas CVT. El resultado favorable del Onix 1.0 no certifica el motor Montana 1.2. Los casos antiguos de Saveiro no prueban una falla actual. La ausencia de un problema encontrado no demuestra ausencia de problemas. No se usa la reputación mundial de una marca para calificar otro modelo.</p>
 </details>
 <p class="nota">DFSK C22 (4,60 m) y Changan MS201 (4,66 m) cumplen el largo, pero se excluyen de las candidatas por su formato de mini camión de carga. Fiat Strada no se cuenta como otra opción nueva: la generación actual se vende aquí como RAM 700. Las campañas antiguas se aplican por chasis y no se extrapolan a todos los vehículos nuevos.</p>
-</section>
-
-<div class="cajas" id="cajas"></div>
-
-<h2>Cuánto mide de más que la RAM 700</h2>
-<div id="siluetas"></div>
-<p class="leyenda">Contorno punteado: RAM 700 (4,47 × 1,60 m), la más chica. En rojo, lo que cada modelo agrega. En verde, tu Škoda Kodiaq.</p>
-
-<h2>Huella en un estacionamiento</h2>
-<p class="nota">Vista desde arriba, estacionamiento estándar chileno de 2,40 × 5,00 m. En rojo, lo que sobresale.</p>
-<div class="planta" id="planta"></div>
-
-<h2>Costo total a 5 años, desglosado</h2>
-<div class="lg">
-  <span><b style="background:var(--c1)"></b>Combustible o carga</span>
-  <span><b style="background:var(--c2)"></b>Permiso de circulación</span>
-  <span><b style="background:var(--c3)"></b>Seguro</span>
-  <span><b style="background:var(--c4)"></b>Mantención</span>
-  <span><b style="background:var(--c5)"></b>Depreciación</span>
-</div>
-<div id="tco"></div>
-
+</section></details>
 <footer>
-  <p><b>Energía.</b> Bencina 93 a $1.497/L (ENAP, 10 sep 2026). Electricidad domiciliaria $160/kWh (BT1, Región Metropolitana); carga rápida pública $500/kWh. Consumos eléctricos: Riddara RD6 21 kWh/100 km, Maxus T90 26,8, JAC T9 27,8. La RD6 PHEV se calcula con uso mixto 70% eléctrico / 30% bencina. Rendimientos a bencina son los homologados: en uso real, resta entre 10% y 20%.</p>
-  <p><b>Costo a 5 años.</b> 10.000 km al año, 50.000 km en total. Permiso de circulación con la tabla progresiva sobre tasación fiscal, rebaja del 75% para eléctricas e híbridas enchufables (SII 2026) y tasación bajando 12% al año. Seguro estimado en 2,2% del valor al año. Mantención una vez al año. Depreciación a 5 años: 45% en RAM, Chevrolet, Renault y Volkswagen; 48% en Škoda; 38% en Toyota; 60% en Riddara, Maxus y JAC, por el castigo de reventa que hoy tienen las marcas chinas nuevas. Ese supuesto es el más incierto de todos y es el que decide la comparación.</p>
-  <p><b>Autos de referencia.</b> La Škoda Kodiaq es la de Fabián; su costo a 5 años está calculado como si se comprara nueva hoy (Selection 1.5 TSI mHEV), solo para comparar. Del Golf, en Chile hoy solo se vende el GTI, un deportivo: sirve como referencia de tamaño, no de precio. El Corolla sedán híbrido original se conserva; el Corolla Sport hatchback se agrega por separado como usado.</p>
-  <p><b>Incorporaciones del 14 oct 2026.</b> Los seis modelos nuevos en la comparación tienen tipo y fecha de precio visibles. Lexus, Maverick y Rampage muestran precio de lista o sugerido; GR Yaris muestra el precio visible hoy, pero sus condiciones legales siguen fechadas a septiembre: vigencia por confirmar. Corolla usado y Yaris Sport quedan sin precio hasta cotizar. Los netos de autos nuevos son la división aritmética por 1,19; no implican derecho a crédito fiscal. No se estima un total a cinco años sin validar permiso, seguro, mantención, depreciación y combustible de cada versión. Los seis quedan fuera del ranking de costos. Lexus y Toyota convencionales no comparten necesariamente combustible con el GR (97 octanos) o la Rampage (diésel).</p>
-  <p><b>Precios.</b> Se conservan los precios y supuestos de la comparación de septiembre de 2026; no son cotizaciones nuevas de octubre. La Saveiro se añade con dimensiones y consumo; precio, permiso, seguro, mantención, depreciación y total quedan N/D hasta contar con una cotización comparable. No participa en el ranking de costo total. La Maxus, la JAC y la Kodiaq no tienen precio neto publicado: se calculó dividiendo por 1,19.</p>
-  <p><b>Comprar.</b> Los enlaces originales van al distribuidor; los agregados enlazan fichas, oferta o una publicación usada, según cada fila. Ojo con la Maxus T90 EV: el precio de esta tabla ($33.308.100 con IVA) corresponde a la generación anterior; el sitio de Andes Motor hoy ofrece la T90 EV nueva desde $52.990.000 + IVA, casi el doble.</p>
-  <p><b>Ancho con espejos.</b> La tabla usa el ancho de carrocería salvo Maverick, que declara 1,974 m con espejos abatidos y se señala en su fila y huella. La RAM 700 mide 1.967 mm con los espejos desplegados, 23 cm más que sus 1.732 mm de carrocería: para maniobrar en un estacionamiento estrecho, esa es la medida que manda.</p>
-  <p><b>Saveiro.</b> La ficha chilena publica 1,893 m de ancho con espejos. Para comparar carrocerías, se usa 1,721 m sin espejos del <a href="https://www.vw.com.br/idhub/content/dam/onehub_pkw/importers/br/literatura-de-bordo/manual-saveiro/Manual_instru%C3%A7oes_Saveiro_27A.5B1.SAV_66.pdf" target="_blank" rel="noopener">manual Volkswagen</a>. Largo, altura, entre ejes y consumo se toman de la ficha chilena.</p>
-  <p><b>Siluetas.</b> Dibujos esquemáticos a escala con las medidas oficiales, no fotografías.</p>
-  <p>Fuentes: RAM Chile, Autofact, Autocosmos, Rutamotor, Riddara Chile, Maxus Chile, JAC Chile, Chileautos, ENAP, SII.</p>
+<h2>Supuestos para comparar</h2>
+<p><b>Todos los costos son estimaciones.</b> Se usan 10.000 km/año, cinco años y 50.000 km en total. TOTAL = energía + permisos + seguro + mantención + depreciación. La compra no se suma otra vez: la pérdida de valor ya está incluida. No incluye intereses, costo de oportunidad, estacionamiento, peajes, impuesto verde, transferencia, SOAP, revisión técnica ni siniestros. Son pesos constantes de referencia 2026, sin inflación. No es una cotización.</p>
+<p><b>Precios de compra.</b> Nuevos en versión superior de la gama o motorización indicada. Valores al contado con IVA, descontando solo bonos de marca sin obligación de crédito; los calculados se identifican. Saveiro Extreme y Oroch tienen precio estimado y stock sin confirmar. Corolla Cross SEG: confirmar disponibilidad, pues la combinación de tienda revisada figura «Próximamente». Base = precio dividido por 1,19; no se presupone recuperación de IVA. No se incluyen impuesto verde ni inscripción/patente inicial.</p>
+<p><b>Energía.</b> Supuestos de comparación: bencina $1.500/L en Toyota y Saveiro, $1.600/L en Lexus, Golf y camionetas turbo. No son precios actuales de una estación. Electricidad domiciliaria $160/kWh; rápida $500/kWh. El total usa carga domiciliaria. PHEV Ultra: 70% de kilómetros eléctricos a 27 kWh/100 km y 30% a bencina a 11 km/l estimados. Consumos de Maverick, Golf y Oroch se identifican como referencias o estimaciones; Maxus y JAC incluyen un margen estimado sobre batería/autonomía. Las cifras oficiales de otros modelos usan ciclos distintos y pueden excluir pérdidas de carga; el uso real cambia el resultado.</p>
+<p><b>Permiso aproximado.</b> <a href="https://www.sii.cl/preguntas_frecuentes/tasac_fiscal_vehiculos/001_170_5079.htm" target="_blank" rel="noopener">Escala SII</a>: 1%, 2%, 3%, 4% y 4,5% por tramos de 60/120/250/400 UTM; mínimo media UTM. UTM base enero 2026: <a href="https://www.sii.cl/valores_y_fechas/utm/utm2026.htm" target="_blank" rel="noopener">$69.751</a>, congelada para comparar. Base inicial: precio neto sin IVA. La base baja 12% anual (supuesto, no tasación SII). Se modelan cinco pagos completos 2026–2030, sin prorrateo: en EV/PHEV elegibles, 25%, 50%, 50%, 75%, 75% del permiso normal, conforme al <a href="https://www.penalolen.cl/departamento-de-permisos-de-circulacion/" target="_blank" rel="noopener">calendario de rebajas</a>. No se aplica a híbridos no enchufables.</p>
+<p><b>Seguro, mantención y reventa.</b> Seguro anual estimado 2,2% del precio de compra, con mínimo $360.000; prima fija cinco años, no cotización. Mantención/reserva anual y porcentaje de depreciación figuran en «Datos y supuestos» de cada modelo. Son supuestos comparativos; el uso, las tarifas y el mercado de reventa pueden cambiar el orden del ranking.</p>
+<p><b>Tu Škoda.</b> Se conservan las medidas de la tabla original: Kodiaq de 4,758 m de largo y 1,864 m de ancho; confirmar generación para una comparación definitiva. Se usa solo como referencia dimensional. Rectángulos = largo × ancho, sin forma real ni apertura de puertas. En Maverick, ancho de carrocería aproximado desde ficha Ford EE.UU.; su ficha chilena solo publica ancho con espejos. El resto usa ancho de carrocería.</p>
+<p><b>Saveiro.</b> Ancho sin espejos 1,721 m del <a href="https://www.vw.com.br/idhub/content/dam/onehub_pkw/importers/br/literatura-de-bordo/manual-saveiro/Manual_instru%C3%A7oes_Saveiro_27A.5B1.SAV_66.pdf" target="_blank" rel="noopener">manual Volkswagen</a>; ficha Chile: 1,893 m con espejos. Tabla de análisis mecánico original revisada el 5 de octubre, separada del modelo de costos.</p>
 </footer>
 
 </div>
@@ -246,56 +254,223 @@
 <script>
 const AUTOS = [
   {
-    "n": "RAM 700 SLT CD 1.3",
-    "sub": "Fiat Strada bajo marca RAM · bencina",
+    "n": "Lexus LBX Active 1.5 Hybrid",
+    "marca": "Lexus",
+    "forma": "suv",
+    "L": 4.19,
+    "A": 1.825,
+    "H": 1.56,
+    "WB": 2.58,
+    "kml": 26.3,
+    "kwh": null,
+    "iva": 32590000,
+    "mantAnual": 450000,
+    "depPct": 0.4,
+    "sub": "Híbrido · automática · versión Active",
+    "precioNota": "Contado calculado · 14 oct 2026",
+    "detalle": "Active es la versión superior publicada en Chile. Precio al contado calculado: lista $34.990.000 menos bono de marca $2.400.000; se excluye el bono de financiamiento de $1.500.000. Reconfirmar el bono al cotizar. Consumo combinado de ficha: 26,3 km/l.",
+    "fuentes": [
+      [
+        "Lexus Chile: versiones y bonos",
+        "https://lexus.cl/es/modelos/lbx/"
+      ],
+      [
+        "Ficha LBX Chile",
+        "https://lexus.cl/documents/80/FICHA_ESPEC_ONLINE_LEXUS_LBX_11FEB.pdf"
+      ]
+    ],
+    "cls": "",
+    "nuevo": true,
+    "combustiblePrecio": 1600,
+    "neto": 27386555,
+    "ccasa": 6084,
+    "crap": 6084,
+    "e": 3041825,
+    "p": 2821760,
+    "s": 3584900,
+    "m": 2250000,
+    "d": 13036000,
+    "t": 24734485,
+    "mes": 412241,
+    "km": 495,
+    "costeNota": "Proyección 50.000 km / 5 años: mantención y reserva $450.000/año; depreciación 40%; seguro 2,2% anual del precio, mínimo $360.000. Permiso aproximado, no tasación individual SII."
+  },
+  {
+    "n": "Toyota Yaris Hybrid G e-CVT",
+    "marca": "Toyota",
+    "forma": "sedan",
+    "L": 4.425,
+    "A": 1.74,
+    "H": 1.48,
+    "WB": 2.62,
+    "kml": 23.8,
+    "kwh": null,
+    "iva": 21790000,
+    "mantAnual": 250000,
+    "depPct": 0.38,
+    "sub": "Híbrido · automática · versión G",
+    "precioNota": "Contado · 14 oct 2026",
+    "detalle": "G es la única versión híbrida publicada en Chile. Es sedán. Lista $21.990.000 menos bono de marca $200.000; el precio de $21.490.000 exige financiamiento. Rendimiento combinado 23,8 km/l según ficha híbrida.",
+    "fuentes": [
+      [
+        "Toyota Chile: Yaris híbrido",
+        "https://toyota.cl/modelos/sedan/new-yaris-sedan-hybrid/"
+      ],
+      [
+        "Ficha Yaris HEV",
+        "https://tcl-s3-bucket.s3.amazonaws.com/web/media/documents/FT_Yaris_SD_HEV_bZPb7TZ.pdf"
+      ]
+    ],
+    "cls": "",
+    "nuevo": true,
+    "combustiblePrecio": 1500,
+    "neto": 18310924,
+    "ccasa": 6303,
+    "crap": 6303,
+    "e": 3151261,
+    "p": 1542889,
+    "s": 2396900,
+    "m": 1250000,
+    "d": 8280200,
+    "t": 16621250,
+    "mes": 277021,
+    "km": 332,
+    "costeNota": "Proyección 50.000 km / 5 años: mantención y reserva $250.000/año; depreciación 38%; seguro 2,2% anual del precio, mínimo $360.000. Permiso aproximado, no tasación individual SII."
+  },
+  {
+    "n": "Toyota Corolla Cross Hybrid SEG",
+    "marca": "Toyota",
+    "forma": "suv",
+    "L": 4.46,
+    "A": 1.825,
+    "H": 1.62,
+    "WB": 2.64,
+    "kml": 23.3,
+    "kwh": null,
+    "iva": 29490000,
+    "mantAnual": 300000,
+    "depPct": 0.38,
+    "sub": "Híbrido · automática · versión SEG",
+    "precioNota": "Contado · stock por confirmar",
+    "detalle": "SEG es la versión superior, con cuero y techo eléctrico. Corolla Cross es el Corolla nuevo más corto de la oferta chilena consultada; es SUV. Lista $29.990.000 menos bono de marca $500.000. El precio de $28.990.000 requiere crédito. Tienda oficial: la combinación consultada figura «Próximamente»; confirmar color y disponibilidad. Consumo de ficha actual: 23,3 km/l. Entre ejes: ficha Toyota Colombia.",
+    "fuentes": [
+      [
+        "Toyota: precio SEG, octubre 2026",
+        "https://tienda.toyota.cl/index.php?controller=product&id_product=1057&id_product_attribute=7161&rewrite=corolla-cross"
+      ],
+      [
+        "Ficha Corolla Cross Chile",
+        "https://tcl-s3-bucket.s3.amazonaws.com/web/media/documents/Corolla_Cross_V.2.pdf"
+      ],
+      [
+        "Toyota: entre ejes",
+        "https://www.toyota.com.co/wp-content/uploads/2021/04/FT-Corolla-Cross.pdf"
+      ]
+    ],
+    "cls": "",
+    "nuevo": true,
+    "combustiblePrecio": 1500,
+    "neto": 24781513,
+    "ccasa": 6438,
+    "crap": 6438,
+    "e": 3218884,
+    "p": 2432788,
+    "s": 3243900,
+    "m": 1500000,
+    "d": 11206200,
+    "t": 21601772,
+    "mes": 360030,
+    "km": 432,
+    "costeNota": "Proyección 50.000 km / 5 años: mantención y reserva $300.000/año; depreciación 38%; seguro 2,2% anual del precio, mínimo $360.000. Permiso aproximado, no tasación individual SII."
+  },
+  {
+    "n": "Volkswagen Golf GTI 2.0 DSG",
+    "marca": "Volkswagen",
+    "forma": "hatch",
+    "L": 4.289,
+    "A": 1.789,
+    "H": 1.471,
+    "WB": 2.627,
+    "kml": 13.7,
+    "kwh": null,
+    "iva": 43990000,
+    "mantAnual": 450000,
+    "depPct": 0.45,
+    "sub": "Bencina · automática DSG7 · 265 HP",
+    "precioNota": "Contado · octubre 2026",
+    "detalle": "GTI es la versión superior del Golf en la oferta local. Precio publicado para todo medio de pago: $43.990.000. Dimensiones y consumo referenciales de Volkswagen Alemania: 7,0–7,3 L/100 km; se modela 13,7 km/l. No se presenta como homologación chilena.",
+    "fuentes": [
+      [
+        "Volkswagen Chile: Golf GTI",
+        "https://www.volkswagen.cl/golf/golf-gti"
+      ],
+      [
+        "Volkswagen Alemania: medidas y consumo",
+        "https://www.volkswagen.de/de/modelle/golf-gti.html/__ui/technische-daten.app"
+      ]
+    ],
+    "cls": "",
+    "nuevo": true,
+    "combustiblePrecio": 1600,
+    "rendEst": true,
+    "neto": 36966387,
+    "ccasa": 11679,
+    "crap": 11679,
+    "e": 5839416,
+    "p": 4391814,
+    "s": 4838900,
+    "m": 2250000,
+    "d": 19795500,
+    "t": 37115630,
+    "mes": 618594,
+    "km": 742,
+    "costeNota": "Proyección 50.000 km / 5 años: mantención y reserva $450.000/año; depreciación 45%; seguro 2,2% anual del precio, mínimo $360.000. Permiso aproximado, no tasación individual SII."
+  },
+  {
+    "n": "RAM 700 Laramie 1.0T CVT",
+    "marca": "RAM",
     "forma": "pickup",
-    "L": 4.474,
+    "L": 4.48,
     "A": 1.732,
     "H": 1.6,
     "WB": 2.737,
-    "kml": 14.9,
+    "kml": 15.0,
     "kwh": null,
-    "neto": 15490000,
-    "iva": 18433100,
-    "ccasa": 10047,
-    "crap": 10047,
-    "e": 5023500,
-    "p": 2704512,
-    "s": 2027641,
-    "m": 950000,
-    "d": 8294895,
-    "t": 19000548,
-    "mes": 316676,
-    "km": 380,
-    "cls": ""
+    "iva": 21051100,
+    "mantAnual": 300000,
+    "depPct": 0.45,
+    "sub": "Bencina turbo · automática · 4×2",
+    "precioNota": "Contado con IVA · octubre 2026",
+    "detalle": "Laramie turbo/CVT, versión superior. Astara publica contado $17.690.000 + IVA: total $21.051.100. Se excluye bono de financiamiento. Ficha 2026: motor 1.0 turbo, CVT y 15 km/l combinado; no es la anterior Laramie 1.3.",
+    "fuentes": [
+      [
+        "Astara: RAM 700",
+        "https://astararetail.cl/ram-700/"
+      ],
+      [
+        "Ficha RAM 700 2026",
+        "https://sgautos.cl/content/uploads/2026/04/ficha-tecnica-ram-700.pdf"
+      ]
+    ],
+    "cls": "",
+    "nuevo": true,
+    "combustiblePrecio": 1600,
+    "neto": 17690000,
+    "ccasa": 10667,
+    "crap": 10667,
+    "e": 5333333,
+    "p": 1463369,
+    "s": 2315621,
+    "m": 1500000,
+    "d": 9472995,
+    "t": 20085318,
+    "mes": 334755,
+    "km": 402,
+    "costeNota": "Proyección 50.000 km / 5 años: mantención y reserva $300.000/año; depreciación 45%; seguro 2,2% anual del precio, mínimo $360.000. Permiso aproximado, no tasación individual SII."
   },
   {
-    "n": "RAM 700 Bighorn CD 1.3 CVT",
-    "sub": "Bencina, automática",
-    "forma": "pickup",
-    "L": 4.474,
-    "A": 1.732,
-    "H": 1.6,
-    "WB": 2.737,
-    "kml": 16.1,
-    "kwh": null,
-    "neto": 17990000,
-    "iva": 21408100,
-    "ccasa": 9298,
-    "crap": 9298,
-    "e": 4649000,
-    "p": 3231386,
-    "s": 2354891,
-    "m": 950000,
-    "d": 9633645,
-    "t": 20818922,
-    "mes": 346982,
-    "km": 416,
-    "cls": ""
-  },
-  {
-    "n": "Volkswagen Saveiro 1.6 CD MT",
-    "sub": "110 HP · manual · doble cabina de 2 puertas · precio por cotizar",
+    "n": "Volkswagen Saveiro Extreme 1.6 MT",
+    "marca": "Volkswagen",
     "forma": "pickup",
     "L": 4.493,
     "A": 1.721,
@@ -303,578 +478,436 @@ const AUTOS = [
     "WB": 2.752,
     "kml": 13.0,
     "kwh": null,
-    "neto": null,
-    "iva": null,
-    "ccasa": 11515,
-    "crap": 11515,
-    "e": 5757500,
-    "p": null,
-    "s": null,
-    "m": null,
-    "d": null,
-    "t": null,
-    "mes": null,
-    "km": null,
+    "iva": 19300000,
+    "mantAnual": 250000,
+    "depPct": 0.45,
+    "sub": "Bencina · manual · doble cabina, 2 puertas",
+    "precioNota": "Estimado nuevo · stock por confirmar",
+    "detalle": "Extreme es el acabado superior de la ficha chilena. No se encontró una oferta vigente con stock y precio para esta versión. Estimación al contado $19,3 millones: referencia actual Saveiro CD $17.659.600 con IVA más equipamiento; lista histórica Extreme $19.861.100. Rango orientativo $18,5–20,5 millones. Ancho de carrocería sin espejos 1,721 m.",
+    "fuentes": [
+      [
+        "Volkswagen: referencia actual CD",
+        "https://www.volkswagen.cl/saveiro/saveiro-cabina-doble"
+      ],
+      [
+        "Concesionario: versión Extreme",
+        "https://volkswagen.mjh.cl/modelos/nueva-saveiro-cabina-doble/"
+      ],
+      [
+        "Lista histórica oficial octubre 2024",
+        "https://www.volkswagen.cl/dam/files/download/abff27c524028beea51f2231757c6cf4d3bdfc83/e0f2fb0f85506a1654d7d63b6f21606b/db9752a1-c1b9-4d72-acf3-2138f2ac8122/legales-vw-octubre-2024-1"
+      ],
+      [
+        "Ficha Saveiro",
+        "https://www.volkswagen.cl/dam/files/94fb1db15ab761e28823f3d10525482a5613d8f2/05f7f448f651cbecc5d64eed9e364520/dfd8504f-6ad2-4fe8-b53f-38d58b2f2f87/FT-Nueva-Saveiro-PA3-%281%29-copy1"
+      ]
+    ],
     "cls": "",
-    "puertas": 2
+    "nuevo": true,
+    "combustiblePrecio": 1500,
+    "precioEst": true,
+    "puertas": 2,
+    "neto": 16218487,
+    "ccasa": 11538,
+    "crap": 11538,
+    "e": 5769231,
+    "p": 1287109,
+    "s": 2123000,
+    "m": 1250000,
+    "d": 8685000,
+    "t": 19114340,
+    "mes": 318572,
+    "km": 382,
+    "costeNota": "Proyección 50.000 km / 5 años: mantención y reserva $250.000/año; depreciación 45%; seguro 2,2% anual del precio, mínimo $360.000. Permiso aproximado, no tasación individual SII."
   },
   {
-    "n": "Chevrolet Montana 1.2T LT",
-    "sub": "Bencina turbo 130 HP · 1,7 cm sobre 4,70 m",
+    "n": "Chevrolet Montana Premier AT V",
+    "marca": "Chevrolet",
     "forma": "pickup",
     "L": 4.717,
     "A": 1.798,
     "H": 1.659,
     "WB": 2.8,
-    "kml": 14.25,
+    "kml": 13.7,
     "kwh": null,
-    "neto": 16290000,
-    "iva": 19385100,
-    "ccasa": 10505,
-    "crap": 10505,
-    "e": 5252500,
-    "p": 2873112,
-    "s": 2132361,
-    "m": 1050000,
-    "d": 8723295,
-    "t": 20031268,
-    "mes": 333854,
-    "km": 401,
-    "cls": ""
+    "iva": 24636100,
+    "mantAnual": 350000,
+    "depPct": 0.45,
+    "sub": "Bencina turbo · automática · 4×2",
+    "precioNota": "Contado Coseche · 14 oct 2026",
+    "detalle": "Premier AT V es la versión superior publicada por Coseche. Precio contado $24.636.100 con IVA; crédito inteligente $22.836.100, que no se usa aquí. Motor 1.2 turbo y automática de seis marchas. Consumo combinado de ficha para automática: 13,7 km/l.",
+    "fuentes": [
+      [
+        "Coseche: Montana Premier AT V",
+        "https://www.coseche.com/marcas/chevrolet/nuevo/chevrolet-montana"
+      ],
+      [
+        "Ficha Chevrolet Chile",
+        "https://www.chevrolet.cl/content/dam/chevrolet/south-america/chile/espanol/index/pickups-and-trucks/2023-montana/pdf/ficha-tecnica-montana.pdf"
+      ]
+    ],
+    "cls": "",
+    "nuevo": true,
+    "combustiblePrecio": 1600,
+    "neto": 20702605,
+    "ccasa": 11679,
+    "crap": 11679,
+    "e": 5839416,
+    "p": 1856990,
+    "s": 2709971,
+    "m": 1750000,
+    "d": 11086245,
+    "t": 23242622,
+    "mes": 387377,
+    "km": 465,
+    "costeNota": "Proyección 50.000 km / 5 años: mantención y reserva $350.000/año; depreciación 45%; seguro 2,2% anual del precio, mínimo $360.000. Permiso aproximado, no tasación individual SII."
   },
   {
-    "n": "Renault Oroch 1.6 Zen 4×2",
-    "sub": "Bencina 117 HP · manual · 4,700 m exactos",
+    "n": "Renault Oroch Intens Outsider 4×4",
+    "marca": "Renault",
     "forma": "pickup",
-    "L": 4.7,
+    "L": 4.719,
     "A": 1.821,
-    "H": 1.631,
+    "H": 1.695,
     "WB": 2.829,
+    "kml": 10.5,
+    "kwh": null,
+    "iva": 23500000,
+    "mantAnual": 400000,
+    "depPct": 0.45,
+    "sub": "Bencina 1.3 turbo · manual · 4×4",
+    "precioNota": "Estimado nuevo · stock por confirmar",
+    "detalle": "Se usa Intens Outsider 1.3 turbo 4×4 manual, la variante superior del catálogo consultado. No se encontró cotización vigente de concesionario. Estimación al contado: $23,5 millones, basada en catálogo de nuevos a $23.431.100; rango orientativo $22–25 millones. Confirmar disponibilidad. Rendimiento de cálculo estimado: 10,5 km/l. Medidas de la versión Outsider.",
+    "fuentes": [
+      [
+        "Catálogo de nuevos: referencia de precio",
+        "https://www.auto.cl/nuevos/renault/oroch"
+      ],
+      [
+        "Renault: ficha Oroch",
+        "https://www.renault.cl/media/abakz03v/oroch-ft.pdf"
+      ]
+    ],
+    "cls": "",
+    "nuevo": true,
+    "combustiblePrecio": 1600,
+    "precioEst": true,
+    "rendEst": true,
+    "neto": 19747899,
+    "ccasa": 15238,
+    "crap": 15238,
+    "e": 7619048,
+    "p": 1726918,
+    "s": 2585000,
+    "m": 2000000,
+    "d": 10575000,
+    "t": 24505966,
+    "mes": 408433,
+    "km": 490,
+    "costeNota": "Proyección 50.000 km / 5 años: mantención y reserva $400.000/año; depreciación 45%; seguro 2,2% anual del precio, mínimo $360.000. Permiso aproximado, no tasación individual SII."
+  },
+  {
+    "n": "Ford Maverick Tremor 2.0 AWD",
+    "marca": "Ford",
+    "forma": "pickup",
+    "L": 5.073,
+    "A": 1.844,
+    "H": 1.707,
+    "WB": 3.076,
+    "kml": 9.8,
+    "kwh": null,
+    "iva": 40210100,
+    "mantAnual": 450000,
+    "depPct": 0.45,
+    "sub": "Bencina turbo · automática · AWD",
+    "precioNota": "Contado sugerido · 14 oct 2026",
+    "detalle": "Tremor es la versión de mayor precio de la gama chilena: $40.210.100 sugerido; con crédito $38.425.100. Largo, alto y entre ejes: ficha Chile. Para comparar carrocerías se aproxima ancho 1,844 m desde 72,6 pulgadas a manillas en ficha Ford EE.UU.; Chile publica 1,974 m con espejos plegados y 2,121 m abiertos. Rendimiento aproximado 9,8 km/l desde 23 mpg combinado EPA Tremor; no homologación Chile.",
+    "fuentes": [
+      [
+        "Ford Chile: versiones y precios",
+        "https://www.ford.cl/pickups/maverick/comparar-modelos/"
+      ],
+      [
+        "Ficha Maverick Chile",
+        "https://www.ford.cl/content/dam/Ford/website-assets/latam/cl/nameplate/maverick/2025/pdf/fcl-maverick-ficha-tecnica.pdf"
+      ],
+      [
+        "Ford EE.UU.: ancho y consumo Tremor",
+        "https://www.fromtheroad.ford.com/content/dam/fordmediasite/us/en/library/2025/specs/2025-Ford-Maverick-and-Lobo-Technical-Specs.pdf"
+      ]
+    ],
+    "cls": "",
+    "nuevo": true,
+    "combustiblePrecio": 1600,
+    "rendEst": true,
+    "anchoNota": "≈ carrocería, referencia Ford EE.UU.",
+    "neto": 33790000,
+    "ccasa": 16327,
+    "crap": 16327,
+    "e": 8163265,
+    "p": 3858288,
+    "s": 4423111,
+    "m": 2250000,
+    "d": 18094545,
+    "t": 36789209,
+    "mes": 613153,
+    "km": 736,
+    "costeNota": "Proyección 50.000 km / 5 años: mantención y reserva $450.000/año; depreciación 45%; seguro 2,2% anual del precio, mínimo $360.000. Permiso aproximado, no tasación individual SII."
+  },
+  {
+    "n": "RAM Rampage R/T 2.0 AT9",
+    "marca": "RAM",
+    "forma": "pickup",
+    "L": 5.028,
+    "A": 1.886,
+    "H": 1.716,
+    "WB": 2.994,
+    "kml": 10.0,
+    "kwh": null,
+    "iva": 41876100,
+    "mantAnual": 550000,
+    "depPct": 0.45,
+    "sub": "Bencina turbo · automática · 4×4",
+    "precioNota": "Contado con IVA · octubre 2026",
+    "detalle": "R/T es la versión superior: motor bencinero 2.0 turbo de 272 HP y automática de nueve marchas. Precio contado Astara $35.190.000 + IVA = $41.876.100. El precio financiado es menor y no se usa aquí. Consumo mixto de ficha: 10 km/l.",
+    "fuentes": [
+      [
+        "Astara: Rampage R/T",
+        "https://astararetail.cl/ram-rampage/"
+      ],
+      [
+        "Ficha Rampage Chile",
+        "https://www.ram.com/content/dam/cross-regional/stellantis/ramtrucks/latam-rol/chile/es_cl/fichas-tecnicas/2026/FT-Rampage-2708.pdf"
+      ]
+    ],
+    "cls": "",
+    "nuevo": true,
+    "combustiblePrecio": 1600,
+    "neto": 35190000,
+    "ccasa": 16000,
+    "crap": 16000,
+    "e": 8000000,
+    "p": 4091840,
+    "s": 4606371,
+    "m": 2750000,
+    "d": 18844245,
+    "t": 38292456,
+    "mes": 638208,
+    "km": 766,
+    "costeNota": "Proyección 50.000 km / 5 años: mantención y reserva $550.000/año; depreciación 45%; seguro 2,2% anual del precio, mínimo $360.000. Permiso aproximado, no tasación individual SII."
+  },
+  {
+    "n": "Riddara RD6 PHEV Ultra 4WD",
+    "marca": "Riddara",
+    "forma": "pickup",
+    "L": 5.26,
+    "A": 1.9,
+    "H": 1.88,
+    "WB": 3.12,
     "kml": 11.0,
-    "kwh": null,
-    "neto": 14090000,
-    "iva": 16767100,
-    "ccasa": 13609,
-    "crap": 13609,
-    "e": 6804500,
-    "p": 2409462,
-    "s": 1844381,
-    "m": 1000000,
-    "d": 7545195,
-    "t": 19603538,
-    "mes": 326726,
-    "km": 392,
-    "cls": ""
+    "kwh": 27.0,
+    "iva": 35688100,
+    "mantAnual": 350000,
+    "depPct": 0.6,
+    "sub": "Híbrida enchufable · automática · 4WD",
+    "precioNota": "Contado calculado con IVA · 14 oct",
+    "detalle": "Ultra es la versión superior. Lista $33.990.000 netos menos bono marca $4.000.000; se excluye bono financiero $5.000.000. Contado calculado con IVA: $35.688.100. Batería 19,09 kWh. Consumo eléctrico referencial publicado: 3,7 km/kWh, equivalente a 27,0 kWh/100 km. Modelo de uso: 70% eléctrico y 30% bencina a 11 km/l estimados; no corresponde a una medición conjunta.",
+    "fuentes": [
+      [
+        "Riddara Chile: PHEV Ultra y bonos",
+        "https://www.riddarachile.cl/pickup-hibrida-enchufable"
+      ],
+      [
+        "Ficha PHEV 2026",
+        "https://www.riddarachile.cl/images/productos/hibrida/pdf/2026/260414_ficha_tecnica_Riddara_Hibrida.pdf"
+      ]
+    ],
+    "cls": "",
+    "nuevo": true,
+    "combustiblePrecio": 1600,
+    "phev": true,
+    "rendEst": true,
+    "neto": 29990000,
+    "ccasa": 7388,
+    "crap": 13814,
+    "e": 3693818,
+    "p": 1622682,
+    "s": 3925691,
+    "m": 1750000,
+    "d": 21412860,
+    "t": 32405051,
+    "mes": 540084,
+    "km": 648,
+    "costeNota": "Proyección 50.000 km / 5 años: mantención y reserva $350.000/año; depreciación 60%; seguro 2,2% anual del precio, mínimo $360.000. Permiso aproximado, no tasación individual SII."
   },
   {
-    "n": "Renault Oroch 1.3T CVT Intens",
-    "sub": "Bencina turbo 156 HP",
-    "forma": "pickup",
-    "L": 4.7,
-    "A": 1.821,
-    "H": 1.694,
-    "WB": 2.829,
-    "kml": 12.7,
-    "kwh": null,
-    "neto": 17290000,
-    "iva": 20575100,
-    "ccasa": 11787,
-    "crap": 11787,
-    "e": 5893500,
-    "p": 3083861,
-    "s": 2263261,
-    "m": 1000000,
-    "d": 9258795,
-    "t": 21499417,
-    "mes": 358324,
-    "km": 430,
-    "cls": ""
-  },
-  {
-    "n": "Riddara RD6 PHEV Pro",
-    "sub": "Híbrida enchufable · 80+ km eléctricos",
+    "n": "Riddara RD6 EV Ultra 4WD 86 kWh",
+    "marca": "Riddara",
     "forma": "pickup",
     "L": 5.26,
     "A": 1.9,
-    "H": 1.865,
+    "H": 1.88,
     "WB": 3.12,
     "kml": null,
-    "kwh": null,
-    "neto": 23990000,
-    "iva": 28548100,
-    "ccasa": 6099,
-    "crap": 10383,
-    "e": 3049500,
-    "p": 1123971,
-    "s": 3140291,
-    "m": 900000,
-    "d": 17128860,
-    "t": 25342622,
-    "mes": 422377,
-    "km": 507,
-    "cls": ""
+    "kwh": 21.7,
+    "iva": 53538100,
+    "mantAnual": 200000,
+    "depPct": 0.6,
+    "sub": "Eléctrica · automática · 4WD",
+    "precioNota": "Contado calculado con IVA · 14 oct",
+    "detalle": "Ultra 4WD con batería 86 kWh, versión superior. Lista neta $47.990.000 menos bono marca $3.000.000; se excluye bono financiero $5.300.000. Contado calculado con IVA: $53.538.100. Consumo publicado 4,6 km/kWh, convertido a 21,7 kWh/100 km para el cálculo. No incluye pérdidas adicionales de carga.",
+    "fuentes": [
+      [
+        "Riddara Chile: RD6 Ultra y bonos",
+        "https://www.riddarachile.cl/riddara-rd6"
+      ],
+      [
+        "Ficha RD6 4WD",
+        "https://www.riddarachile.cl/images/productos/rd6/pdf/2025/11/2025-11-03-FICHA-TECNICA-RIDDARA-RD6-4WD.pdf"
+      ]
+    ],
+    "cls": "",
+    "nuevo": true,
+    "combustiblePrecio": 1500,
+    "neto": 44990000,
+    "ccasa": 3472,
+    "crap": 10850,
+    "e": 1736000,
+    "p": 2921200,
+    "s": 5889191,
+    "m": 1000000,
+    "d": 32122860,
+    "t": 43669251,
+    "mes": 727821,
+    "km": 873,
+    "costeNota": "Proyección 50.000 km / 5 años: mantención y reserva $200.000/año; depreciación 60%; seguro 2,2% anual del precio, mínimo $360.000. Permiso aproximado, no tasación individual SII."
   },
   {
-    "n": "Riddara RD6 Air",
-    "sub": "100% eléctrica · 63 kWh · 373 km NEDC",
+    "n": "Maxus All New T90 EV GLX 4×4",
+    "marca": "Maxus",
     "forma": "pickup",
-    "L": 5.26,
-    "A": 1.9,
-    "H": 1.865,
-    "WB": 3.12,
+    "L": 5.5,
+    "A": 1.997,
+    "H": 1.874,
+    "WB": 3.3,
     "kml": null,
-    "kwh": 21.0,
-    "neto": 42990000,
-    "iva": 51158100,
-    "ccasa": 3360,
-    "crap": 10500,
-    "e": 1680000,
-    "p": 2125032,
-    "s": 5627391,
-    "m": 550000,
-    "d": 30694860,
-    "t": 40677283,
-    "mes": 677955,
-    "km": 814,
-    "cls": ""
-  },
-  {
-    "n": "Maxus T90 EV",
-    "sub": "100% eléctrica · 88,5 kWh · 471 km NEDC",
-    "forma": "pickup",
-    "L": 5.365,
-    "A": 1.998,
-    "H": 1.809,
-    "WB": 3.155,
-    "kml": null,
-    "kwh": 26.8,
-    "neto": 27989160,
-    "iva": 33308100,
-    "ccasa": 4288,
-    "crap": 13400,
-    "e": 2144000,
-    "p": 1334721,
-    "s": 3663891,
-    "m": 550000,
-    "d": 19984860,
-    "t": 27677472,
-    "mes": 461291,
-    "km": 554,
-    "cls": ""
+    "kwh": 27.5,
+    "iva": 68413100,
+    "mantAnual": 300000,
+    "depPct": 0.6,
+    "sub": "Eléctrica · automática · GLX 4×4",
+    "precioNota": "Contado con IVA · 14 oct 2026",
+    "detalle": "GLX 4×4 es la versión superior de la nueva generación. Lista neta $57.990.000 menos bono marca $500.000: contado $57.490.000 + IVA. Se excluye bono financiero $500.000. Batería 102,2 kWh y autonomía WLTP 430 km. Consumo de cálculo estimado 27,5 kWh/100 km: cociente batería/autonomía más margen aproximado de 16% por carga y uso; no homologación.",
+    "fuentes": [
+      [
+        "Maxus Chile: All New T90 EV",
+        "https://maxus.cl/w/t90-ev"
+      ],
+      [
+        "Ficha nueva generación",
+        "https://maxus.cl/documents/85743/139093/MAXUS_FT-ALL%2BNEW%2BT90%2BEV%2B(1).pdf/8d9cd664-71e2-d29c-5951-430cc36f7ac2?t=1784397274722"
+      ]
+    ],
+    "cls": "",
+    "nuevo": true,
+    "combustiblePrecio": 1500,
+    "rendEst": true,
+    "neto": 57490000,
+    "ccasa": 4400,
+    "crap": 13750,
+    "e": 2200000,
+    "p": 4064167,
+    "s": 7525441,
+    "m": 1500000,
+    "d": 41047860,
+    "t": 56337468,
+    "mes": 938958,
+    "km": 1127,
+    "costeNota": "Proyección 50.000 km / 5 años: mantención y reserva $300.000/año; depreciación 60%; seguro 2,2% anual del precio, mínimo $360.000. Permiso aproximado, no tasación individual SII."
   },
   {
     "n": "JAC T9 EV AWD Advance",
-    "sub": "100% eléctrica 4×4 · 88 kWh · 317 km WLTP",
+    "marca": "JAC",
     "forma": "pickup",
     "L": 5.33,
     "A": 1.965,
     "H": 1.92,
     "WB": 3.11,
     "kml": null,
-    "kwh": 27.8,
-    "neto": 37989160,
-    "iva": 45208100,
-    "ccasa": 4448,
-    "crap": 13900,
-    "e": 2224000,
-    "p": 1861595,
-    "s": 4972891,
-    "m": 550000,
-    "d": 27124860,
-    "t": 36733346,
-    "mes": 612222,
-    "km": 735,
-    "cls": ""
-  },
-  {
-    "n": "Škoda Kodiaq 2025 Selection",
-    "sub": "SUV 7 asientos · 1.5 TSI mHEV",
-    "forma": "suv",
-    "L": 4.758,
-    "A": 1.864,
-    "H": 1.659,
-    "WB": 2.791,
-    "kml": 12.5,
-    "kwh": null,
-    "neto": 32344538,
-    "iva": 38490000,
-    "ccasa": 11976,
-    "crap": 11976,
-    "e": 5988000,
-    "p": 6256599,
-    "s": 4233900,
-    "m": 1750000,
-    "d": 18475200,
-    "t": 36703699,
-    "mes": 611728,
-    "km": 734,
-    "cls": "mia"
-  },
-  {
-    "n": "VW Golf GTI",
-    "sub": "Único Golf a la venta en Chile",
-    "forma": "hatch",
-    "L": 4.284,
-    "A": 1.789,
-    "H": 1.456,
-    "WB": 2.62,
-    "kml": 11.0,
-    "kwh": null,
-    "neto": 36126050,
-    "iva": 42990000,
-    "ccasa": 13609,
-    "crap": 13609,
-    "e": 6804500,
-    "p": 7053552,
-    "s": 4728900,
-    "m": 1600000,
-    "d": 19345500,
-    "t": 39532452,
-    "mes": 658874,
-    "km": 791,
-    "cls": "ref"
-  },
-  {
-    "n": "Toyota Corolla XLI Hybrid",
-    "sub": "Sedán híbrido",
-    "forma": "sedan",
-    "L": 4.63,
-    "A": 1.78,
-    "H": 1.435,
-    "WB": 2.7,
-    "kml": 20.0,
-    "kwh": null,
-    "neto": 20831933,
-    "iva": 24790000,
-    "ccasa": 7485,
-    "crap": 7485,
-    "e": 3742500,
-    "p": 3830322,
-    "s": 2726900,
-    "m": 1000000,
-    "d": 9420200,
-    "t": 20719922,
-    "mes": 345332,
-    "km": 414,
-    "cls": "ref"
-  },
-  {
-    "kml": 26.3,
-    "kwh": null,
-    "neto": 29403361,
-    "iva": 34990000,
-    "ccasa": null,
-    "crap": null,
-    "e": null,
-    "p": null,
-    "s": null,
-    "m": null,
-    "d": null,
-    "t": null,
-    "mes": null,
-    "km": null,
-    "cls": "",
-    "nuevo": true,
-    "n": "Lexus LBX Active 1.5 Hybrid",
-    "sub": "SUV pequeño de lujo · híbrido CVT · 134 HP",
-    "forma": "suv",
-    "L": 4.19,
-    "A": 1.825,
-    "H": 1.56,
-    "WB": 2.58,
-    "precioNota": "Lista sin bonos · 14 oct 2026",
-    "detalle": "Active es la versión más equipada de las dos LBX ofrecidas en Chile. Precio de lista $34.990.000; la web muestra $31.090.000 con bonos de marca ($2.400.000) y financiamiento ($1.500.000). No incluye impuesto verde. Consumo mixto publicado por Lexus; no es consumo real medido.",
+    "kwh": 29.3,
+    "iva": 50206100,
+    "mantAnual": 250000,
+    "depPct": 0.6,
+    "sub": "Eléctrica · automática · AWD",
+    "precioNota": "Todo medio de pago · 14 oct 2026",
+    "detalle": "Advance AWD es la versión eléctrica publicada. Portillo Sur indica $50.206.100 con todo medio de pago; lista $54.728.100 y crédito $45.208.100. Se usa la ficha de JAC para mecánica, porque el concesionario mezcla datos diésel en su tabla. Batería 88 kWh, autonomía WLTP 330 km. Consumo estimado 29,3 kWh/100 km: batería/autonomía más 10% aproximado por carga y uso.",
     "fuentes": [
       [
-        "Ficha Lexus Chile",
-        "https://lexus.cl/documents/80/FICHA_ESPEC_ONLINE_LEXUS_LBX_11FEB.pdf"
+        "Portillo Sur: precio EV AWD Advance",
+        "https://www.portillosur.cl/jac/t9/"
       ],
       [
-        "Versiones y precios",
-        "https://lexus.cl/es/modelos/lbx/"
-      ],
-      [
-        "Consumo publicado",
-        "https://lexus.cl/es/terminos-y-condiciones-comerciales-por-modelo/"
+        "JAC Chile: T9 EV",
+        "https://www.jacautoschile.cl/modelos/electricos/jac-t9-ev/"
       ]
-    ]
-  },
-  {
-    "kml": 12.6,
-    "kwh": null,
-    "neto": null,
-    "iva": null,
-    "ccasa": null,
-    "crap": null,
-    "e": null,
-    "p": null,
-    "s": null,
-    "m": null,
-    "d": null,
-    "t": null,
-    "mes": null,
-    "km": null,
+    ],
     "cls": "",
     "nuevo": true,
-    "n": "Toyota Corolla Sport SE 1.2T CVT",
-    "sub": "Hatchback pequeño · usado, generación 2019 · no es el sedán",
-    "forma": "hatch",
-    "L": 4.375,
-    "A": 1.79,
-    "H": 1.435,
-    "WB": 2.64,
-    "precioNota": "Usado · depende de año y kilometraje",
-    "detalle": "No aparece como nuevo en el catálogo actual de Toyota Chile. Se incorpora como alternativa usada, con especificaciones de la versión chilena 2019. Hay una publicación de esta versión en Autonauta; no confirma stock ni condición mecánica. Precio y costo total requieren elegir una unidad. Dimensiones y rendimiento: presentación original en Chile de Autocosmos, mayo 2019.",
-    "fuentes": [
-      [
-        "Presentación Chile 2019",
-        "https://noticias.autocosmos.cl/2019/05/15/toyota-corolla-hatchback-2019-en-chile-completamente-reinventado"
-      ],
-      [
-        "Ejemplo usado en Autonauta",
-        "https://autonauta.cl/comprar/toyota-corolla-hb-se-cvt-2019-azul-d5025349-c1c1-490d-8e16-13d2445acac5/"
-      ],
-      [
-        "Catálogo actual Toyota",
-        "https://toyota.cl/modelos/"
-      ]
-    ]
-  },
-  {
-    "kml": 16.7,
-    "kwh": null,
-    "neto": null,
-    "iva": null,
-    "ccasa": null,
-    "crap": null,
-    "e": null,
-    "p": null,
-    "s": null,
-    "m": null,
-    "d": null,
-    "t": null,
-    "mes": null,
-    "km": null,
-    "cls": "",
-    "nuevo": true,
-    "n": "Toyota Yaris Sport S 1.5 CVT",
-    "sub": "Hatchback · tope de la gama Sport convencional · stock por confirmar",
-    "forma": "hatch",
-    "L": 4.145,
-    "A": 1.73,
-    "H": 1.475,
-    "WB": 2.55,
-    "precioNota": "Precio y disponibilidad por confirmar",
-    "detalle": "Se usa la versión Sport S CVT de la ficha chilena: motor 1.5 de 106 HP y caja automática. Es el Yaris hatchback convencional más equipado de esa gama; no es el GR Yaris. Su enlace antiguo en Toyota Chile hoy redirige al GR: no se presume disponibilidad nueva. Rendimiento de la presentación chilena 2023; precio vigente no verificado.",
-    "fuentes": [
-      [
-        "Ficha Toyota / Bruno Fritsch",
-        "https://www.brunofritsch.cl/file/v1693940779721/general/toyota-yaris-hatchback-ficha-tecnica.pdf"
-      ],
-      [
-        "Presentación Chile 2023",
-        "https://autonoticias.cl/2023/09/22/toyota-yaris-sport-fl-2024-chile-mas-estilo-seguridad/"
-      ]
-    ]
-  },
-  {
-    "kml": 10.9,
-    "kwh": null,
-    "neto": 47050420,
-    "iva": 55990000,
-    "ccasa": null,
-    "crap": null,
-    "e": null,
-    "p": null,
-    "s": null,
-    "m": null,
-    "d": null,
-    "t": null,
-    "mes": null,
-    "km": null,
-    "cls": "",
-    "nuevo": true,
-    "n": "Toyota GR Yaris 1.6T AT8",
-    "sub": "Deportivo · 280 HP · AWD · 3 puertas / 4 plazas · bencina 97",
-    "forma": "hatch",
-    "L": 3.995,
-    "A": 1.805,
-    "H": 1.455,
-    "WB": 2.56,
-    "precioNota": "Publicado 14 oct · vigencia por confirmar",
-    "detalle": "Alternativa deportiva adicional al Yaris Sport. Web del modelo consultada el 14 oct 2026: $55.990.000 con IVA y bono de marca de $1.000.000; sus condiciones legales aún indican vigencia hasta 30 sep 2026, por lo que debe reconfirmarse. La ficha Chile exige gasolina 97; no se aplica el precio de bencina 93 del cálculo antiguo. Consumo mixto de la versión AT en la web actual: 10,9 km/l (los legales antiguos indican 13). Distancia entre ejes contrastada con Toyota Media.",
-    "fuentes": [
-      [
-        "Modelo Toyota Chile",
-        "https://toyota.cl/modelos/hatchback/gr_yaris/"
-      ],
-      [
-        "Ficha técnica Chile",
-        "https://tcl-s3-bucket.s3.amazonaws.com/web/media/documents/FICHA_TECNICA_YARIS_GR63.pdf"
-      ],
-      [
-        "Precio y consumo / vigencia",
-        "https://toyota.cl/terminos-y-condiciones-comerciales-por-modelo/"
-      ],
-      [
-        "Entre ejes Toyota",
-        "https://media.toyota.co.uk/world-debut-of-the-new-toyota-gr-yaris-at-the-2024-tokyo-auto-salon/"
-      ]
-    ]
-  },
-  {
-    "kml": null,
-    "kwh": null,
-    "neto": 26290000,
-    "iva": 31285100,
-    "ccasa": null,
-    "crap": null,
-    "e": null,
-    "p": null,
-    "s": null,
-    "m": null,
-    "d": null,
-    "t": null,
-    "mes": null,
-    "km": null,
-    "cls": "",
-    "nuevo": true,
-    "n": "Ford Maverick XLT 2.0 AT AWD",
-    "sub": "Pick-up · bencina turbo 238 HP · automática de 8 velocidades",
-    "forma": "pickup",
-    "L": 5.073,
-    "A": 1.974,
-    "H": 1.707,
-    "WB": 3.076,
-    "anchoNota": "espejos abatidos",
-    "precioNota": "Precio sugerido Ford · 14 oct 2026",
-    "detalle": "Precio sugerido $31.285.100 con IVA. Ficha chilena actual: 5,073 m de largo, 1,707 m de alto y 3,076 m entre ejes. Ancho de 1,974 m con espejos abatidos; 2,121 m desplegados. La huella usa el ancho abatido y no es directamente comparable al ancho de carrocería de las otras filas. No se reutiliza el consumo de la Maverick 4x2 anterior ni el de la híbrida.",
-    "fuentes": [
-      [
-        "Versiones y precio Ford Chile",
-        "https://www.ford.cl/pickups/maverick/comparar-modelos/"
-      ],
-      [
-        "Ficha técnica Ford Chile",
-        "https://www.ford.cl/content/dam/Ford/website-assets/latam/cl/nameplate/maverick/2025/pdf/fcl-maverick-ficha-tecnica.pdf"
-      ]
-    ]
-  },
-  {
-    "kml": 13.2,
-    "kwh": null,
-    "neto": 36390000,
-    "iva": 43304100,
-    "ccasa": null,
-    "crap": null,
-    "e": null,
-    "p": null,
-    "s": null,
-    "m": null,
-    "d": null,
-    "t": null,
-    "mes": null,
-    "km": null,
-    "cls": "",
-    "nuevo": true,
-    "n": "RAM Rampage Laramie 2.2 diésel AT9",
-    "sub": "Pick-up · 200 HP · 4×4 · 4,5 cm más corta que Maverick XLT",
-    "forma": "pickup",
-    "L": 5.028,
-    "A": 1.886,
-    "H": 1.716,
-    "WB": 2.994,
-    "precioNota": "Lista sin bonos · Astara · 14 oct 2026",
-    "detalle": "Versión Laramie 2.2 diésel de 200 HP, automática de 9 marchas. Precio lista Astara $36.390.000 + IVA ($43.304.100); precio con bono todo medio de pago $33.190.000 + IVA, sujeto a condiciones. No se mezcla con Laramie 2.0 de 170 HP. Ancho sin espejos 1,886 m; con espejos 2,040 m. Rendimiento mixto 13,2 km/l. Costo de combustible pendiente de una referencia de diésel.",
-    "fuentes": [
-      [
-        "Ficha RAM Chile 2026",
-        "https://www.ram.com/content/dam/cross-regional/stellantis/ramtrucks/latam-rol/chile/es_cl/fichas-tecnicas/2026/FT-Rampage-2708.pdf"
-      ],
-      [
-        "Precio versión Laramie 2.2",
-        "https://astararetail.cl/ram-rampage/"
-      ]
-    ]
+    "combustiblePrecio": 1500,
+    "rendEst": true,
+    "neto": 42190000,
+    "ccasa": 4688,
+    "crap": 14650,
+    "e": 2344000,
+    "p": 2670699,
+    "s": 5522671,
+    "m": 1250000,
+    "d": 30123660,
+    "t": 41911030,
+    "mes": 698517,
+    "km": 838,
+    "costeNota": "Proyección 50.000 km / 5 años: mantención y reserva $250.000/año; depreciación 60%; seguro 2,2% anual del precio, mínimo $360.000. Permiso aproximado, no tasación individual SII."
   }
 ];
 
-const URLS = {
-  "Lexus LBX Active 1.5 Hybrid": ["Ficha y oferta", "https://lexus.cl/documents/80/FICHA_ESPEC_ONLINE_LEXUS_LBX_11FEB.pdf"],
-  "Toyota Corolla Sport SE 1.2T CVT": ["Ver usado", "https://autonauta.cl/comprar/toyota-corolla-hb-se-cvt-2019-azul-d5025349-c1c1-490d-8e16-13d2445acac5/"],
-  "Toyota Yaris Sport S 1.5 CVT": ["Ficha y oferta", "https://www.brunofritsch.cl/file/v1693940779721/general/toyota-yaris-hatchback-ficha-tecnica.pdf"],
-  "Toyota GR Yaris 1.6T AT8": ["Ficha y oferta", "https://toyota.cl/modelos/hatchback/gr_yaris/"],
-  "Ford Maverick XLT 2.0 AT AWD": ["Ficha y oferta", "https://www.ford.cl/pickups/maverick/comparar-modelos/"],
-  "RAM Rampage Laramie 2.2 diésel AT9": ["Ficha y oferta", "https://www.ram.com/content/dam/cross-regional/stellantis/ramtrucks/latam-rol/chile/es_cl/fichas-tecnicas/2026/FT-Rampage-2708.pdf"],
-  'Volkswagen Saveiro 1.6 CD MT': ['Volkswagen Chile', 'https://www.volkswagen.cl/vehiculos-comerciales'],
-  'RAM 700 SLT CD 1.3':            ['RAM Chile',        'https://www.ram.com/cl/ram-700.html'],
-  'RAM 700 Bighorn CD 1.3 CVT':    ['RAM Chile',        'https://www.ram.com/cl/ram-700.html'],
-  'Chevrolet Montana 1.2T LT':     ['Chevrolet Chile',  'https://www.chevrolet.cl/pickups/pickup-montana'],
-  'Renault Oroch 1.6 Zen 4×2':     ['Dercocenter',      'https://www.dercocenter.cl/auto/renault/nueva-oroch'],
-  'Renault Oroch 1.3T CVT Intens': ['Dercocenter',      'https://www.dercocenter.cl/auto/renault/nueva-oroch'],
-  'Riddara RD6 PHEV Pro':          ['Riddara Chile',    'https://www.riddarachile.cl/pickup-hibrida-enchufable'],
-  'Riddara RD6 Air':               ['Riddara Chile',    'https://www.riddarachile.cl/riddara-rd6'],
-  'Maxus T90 EV':                  ['Maxus / Andes Motor','https://maxus.cl/-/t90-ev'],
-  'JAC T9 EV AWD Advance':         ['JAC Chile',        'https://www.jacautoschile.cl/modelos/electricos/jac-t9-ev/'],
-  'Škoda Kodiaq 2025 Selection':   ['Škoda Chile',      'https://www.skoda.cl/kodiaq/Nuevo-kodiaq'],
-  'VW Golf GTI':                   ['Volkswagen Chile', 'https://www.volkswagen.cl/golf-gti-volvio-la-leyenda'],
-  'Toyota Corolla XLI Hybrid':     ['Toyota Chile',     'https://toyota.cl/modelos/sedan/corolla-sedan/']
-};
-const REF = { l: 4.474, h: 1.60, wb: 2.737, forma: 'pickup' };
+const URLS = Object.fromEntries(AUTOS.map(a=>[a.n,a.fuentes[0]]));
+AUTOS.forEach(a=>{if(!a.fuentes.length && URLS[a.n])a.fuentes=[URLS[a.n]];});
+const REF = { l: 4.758, a: 1.864, n: 'Tu Škoda Kodiaq' };
 const cl = v => v == null ? 'N/D' : '$' + Math.round(v).toLocaleString('es-CL');
 const m2 = v => v.toFixed(2).replace('.', ',');
 const m3 = v => v.toFixed(3).replace('.', ',');
-let uid = 0;
-
-/* ---------- siluetas ---------- */
-function pathPerfil(forma, L, H){
-  const P = {
-    pickup: [[0,.30],[.02,.42],[.12,.45],[.22,.62],[.34,1],[.60,1],[.66,.58],[.69,.60],[1,.60],[1,.30]],
-    hatch:  [[0,.33],[.03,.45],[.15,.48],[.28,.70],[.42,1],[.72,1],[.90,.72],[1,.60],[1,.33]],
-    sedan:  [[0,.33],[.03,.45],[.16,.48],[.30,.70],[.45,1],[.66,1],[.82,.62],[1,.58],[1,.33]],
-    suv:    [[0,.30],[.03,.44],[.14,.47],[.26,.66],[.38,1],[.74,1],[.88,.80],[1,.62],[1,.30]]
-  }[forma];
-  return 'M' + P.map(p => (p[0]*L).toFixed(3) + ',' + (p[1]*H).toFixed(3)).join(' L') + ' Z';
+function delta(v,ref){const d=Math.round((v-ref)*1000)/10;return (d>0?'+':'')+d.toLocaleString('es-CL')+' cm';}
+function svgRect(a,escala){
+ const w=Math.max(a.L,REF.l)*escala+16,h=Math.max(a.A,REF.a)*escala+16;
+ const l=a.L*escala,an=a.A*escala,rl=REF.l*escala,ra=REF.a*escala;
+ let rojo='';
+ if(l>rl)rojo+='<rect x="'+(8+rl)+'" y="8" width="'+(l-rl)+'" height="'+an+'" fill="#c53030" opacity=".65"/>';
+ if(an>ra)rojo+='<rect x="8" y="'+(8+ra)+'" width="'+Math.min(l,rl)+'" height="'+(an-ra)+'" fill="#c53030" opacity=".65"/>';
+ return '<svg class="rect-comparador" role="img" aria-label="'+a.n+': '+delta(a.L,REF.l)+' de largo y '+delta(a.A,REF.a)+' de ancho respecto a tu Škoda" width="'+w+'" height="'+h+'" viewBox="0 0 '+w+' '+h+'">'+
+ '<rect class="rect-auto" x="8" y="8" width="'+l+'" height="'+an+'" fill="'+(a.cls==='mia'?'#8fd3a8':'#9ab8d8')+'"/>'+rojo+
+ '<rect class="rect-skoda" x="8" y="8" width="'+rl+'" height="'+ra+'" fill="none" stroke="#276749" stroke-width="1.8" stroke-dasharray="4 3"/></svg>';
 }
-function svgPerfil(forma, L, H, WB, s){
-  const id = 'c' + (uid++), r = .33;
-  const ejeD = .18*L, ejeT = Math.min(.18*L + WB, L - .12*L);
-  const w = Math.max(L, REF.l)*s + 2, h = Math.max(H, REF.h)*s + 3, base = Math.max(H, REF.h);
-  const d = pathPerfil(forma, L, H);
-  const MAXL = Math.max(L, REF.l) + .3, MAXH = Math.max(H, REF.h) + .3;
-  return '<svg width="'+w.toFixed(0)+'" height="'+h.toFixed(0)+'" viewBox="0 0 '+w.toFixed(1)+' '+h.toFixed(1)+'">' +
-    '<defs><clipPath id="in'+id+'"><rect x="-0.3" y="-0.3" width="'+(REF.l+.3)+'" height="'+(REF.h+.3)+'"/></clipPath>' +
-    '<clipPath id="out'+id+'" clip-rule="evenodd"><path d="M-0.3,-0.3 H'+MAXL+' V'+MAXH+' H-0.3 Z M-0.3,-0.3 H'+REF.l+' V'+REF.h+' H-0.3 Z"/></clipPath></defs>' +
-    '<g transform="translate(1,'+(base*s).toFixed(1)+') scale('+s+',-'+s+')">' +
-      '<path class="cuerpo" d="'+d+'" clip-path="url(#in'+id+')"/>' +
-      '<path class="exceso" d="'+d+'" clip-path="url(#out'+id+')"/>' +
-      '<path class="fantasma" vector-effect="non-scaling-stroke" d="'+pathPerfil(REF.forma,REF.l,REF.h)+'"/>' +
-      '<circle class="rueda" cx="'+ejeD.toFixed(2)+'" cy="'+r+'" r="'+r+'"/>' +
-      '<circle class="rueda" cx="'+ejeT.toFixed(2)+'" cy="'+r+'" r="'+r+'"/>' +
-    '</g></svg>';
-}
-
 /* ---------- tabla ---------- */
 const COLS = [
   {t:'Modelo', cls:'txt pin', v:a=>a.n, r:a=>celdaModelo(a)},
   {t:'Cabina', sub:'carrocería', cls:'txt', v:a=>a.forma,
    r:a=>a.forma === 'pickup' ? '<b>Doble</b><br>'+(a.puertas||4)+' puertas' : ({suv:'SUV',hatch:'Hatchback',sedan:'Sedán'})[a.forma]},
-  {t:'Silueta', sub:'vs RAM 700', cls:'txt', v:a=>a.L, r:a=>celdaSilueta(a)},
+  {t:'Rectángulo', sub:'largo × ancho vs tu Škoda', cls:'txt', v:a=>a.L, r:a=>celdaSilueta(a)},
   {t:'Largo', sub:'m', v:a=>a.L, r:a=>m3(a.L)},
-  {t:'Ancho', sub:'m · ver notas', v:a=>a.A, r:a=>m2(a.A)+(a.anchoNota?'<small class="dato-nota">'+a.anchoNota+'</small>':'')},
+  {t:'Ancho', sub:'m · ver notas', v:a=>a.A, r:a=>(a.anchoNota?'≈ ':'')+m3(a.A)+(a.anchoNota?'<small class="dato-nota">'+a.anchoNota+'</small>':'')},
   {t:'Alto', sub:'m', v:a=>a.H, r:a=>m2(a.H)},
   {t:'Entre ejes', sub:'m', v:a=>a.WB, r:a=>m2(a.WB)},
-  {t:'Rendimiento', sub:'km/l o kWh/100 km', v:a=>a.kml??a.kwh, r:a=>a.kml ? a.kml.toFixed(1).replace('.',',')+' km/l' : (a.kwh ? a.kwh.toString().replace('.',',')+' kWh' : (a.n==='Riddara RD6 PHEV Pro'?'mixto':'N/D'))},
-  {t:'Neto', sub:'$', g:1, v:a=>a.neto, r:a=>cl(a.neto)},
-  {t:'Con IVA', sub:'$ · tipo de precio debajo', v:a=>a.iva, r:a=>cl(a.iva)+(a.precioNota?'<small class="dato-nota">'+a.precioNota+'</small>':'')},
+  {t:'Rendimiento', sub:'km/l o kWh/100 km', v:a=>a.kml??a.kwh, r:a=>a.phev ? '≈ '+a.kwh+' kWh/100 km + '+a.kml+' km/l<small class="dato-nota">70% eléctrico / 30% bencina</small>' : a.kml ? (a.rendEst?'≈ ':'')+a.kml.toFixed(1).replace('.',',')+' km/l' : (a.kwh ? (a.rendEst?'≈ ':'')+a.kwh.toString().replace('.',',')+' kWh/100 km' : (a.n==='Riddara RD6 PHEV Pro'?'mixto':'N/D'))},
+  {t:'Base', sub:'precio sin IVA', g:1, v:a=>a.neto, r:a=>cl(a.neto)},
+  {t:'Nuevo al contado', sub:'$ · IVA incluido', v:a=>a.iva, r:a=>(a.precioEst?'≈ ':'')+cl(a.iva)+(a.precioNota?'<small class="dato-nota">'+a.precioNota+'</small>':'')},
   {t:'$/100 km', sub:'carga en casa', g:1, v:a=>a.ccasa, r:a=>'<span class="'+(a.ccasa!=null&&a.ccasa<7000?'ok':'')+'">'+cl(a.ccasa)+'</span>'},
   {t:'$/100 km', sub:'carga rápida', v:a=>a.crap, r:a=>cl(a.crap)},
-  {t:'Combustible', sub:'5 años', g:1, v:a=>a.e, r:a=>cl(a.e)},
-  {t:'Permiso', sub:'5 años', v:a=>a.p, r:a=>cl(a.p)},
-  {t:'Seguro', sub:'5 años', v:a=>a.s, r:a=>cl(a.s)},
-  {t:'Mantención', sub:'5 años', v:a=>a.m, r:a=>cl(a.m)},
-  {t:'Depreciación', sub:'5 años', v:a=>a.d, r:a=>cl(a.d)},
-  {t:'TOTAL 5 años', sub:'todo incluido', cls:'pinR', v:a=>a.t, r:a=>a.t == null ? 'N/D · por cotizar' : '<span class="tot '+(a.t<19500000?'ok':a.t>35000000?'mal':'')+'">'+cl(a.t)+'</span>'},
+  {t:'Combustible', sub:'≈ 5 años', g:1, v:a=>a.e, r:a=>cl(a.e)},
+  {t:'Permiso', sub:'≈ 5 años', v:a=>a.p, r:a=>cl(a.p)},
+  {t:'Seguro', sub:'≈ 5 años', v:a=>a.s, r:a=>cl(a.s)},
+  {t:'Mantención', sub:'≈ 5 años', v:a=>a.m, r:a=>cl(a.m)},
+  {t:'Depreciación', sub:'≈ 5 años', v:a=>a.d, r:a=>cl(a.d)},
+  {t:'TOTAL 5 años', sub:'≈ partidas indicadas', cls:'pinR', v:a=>a.t, r:a=>a.t == null ? 'N/D · por cotizar' : '<span class="tot '+(a.t<19500000?'ok':a.t>35000000?'mal':'')+'">'+cl(a.t)+'</span>'},
   {t:'Al mes', sub:'$', v:a=>a.mes, r:a=>cl(a.mes)},
   {t:'Por km', sub:'$', v:a=>a.km, r:a=>cl(a.km)},
   {t:'Ficha / oferta', sub:'fuente o vendedor', cls:'txt', v:a=>(URLS[a.n]||['zz'])[0],
@@ -884,19 +917,37 @@ const COLS = [
 function celdaModelo(a){
   const tag = a.cls === 'mia' ? '<span class="tag"> · la tuya hoy</span>'
             : a.cls === 'ref' ? '<span class="tagr"> · referencia</span>' : '';
-  const detalle = a.detalle ? '<details class="datos-modelo"><summary>Datos y fuentes</summary><p>'+a.detalle+'</p>'+a.fuentes.map(f=>'<a href="'+f[1]+'" target="_blank" rel="noopener">'+f[0]+' ↗</a>').join('<br>')+'</details>' : '';
-  return '<div class="modelo">' + a.n + tag + (a.nuevo?'<span class="tag-nuevo">Agregado · 14 oct</span>':'') + '<span>' + a.sub + '</span></div>'+detalle;
+  const detalle = a.detalle ? '<details class="datos-modelo"><summary>Datos y supuestos</summary><p>'+a.detalle+'</p><p>'+a.costeNota+'</p>'+a.fuentes.map(f=>'<a href="'+f[1]+'" target="_blank" rel="noopener">'+f[0]+' ↗</a>').join('<br>')+'</details>' : '';
+  return '<div class="modelo">' + a.n + tag + (a.nuevo?'<span class="tag-nuevo">Nuevo · versión superior</span>':'') + '<span>' + a.sub + '</span></div>'+detalle+'<button class="ocultar-modelo" type="button" data-ocultar="'+encodeURIComponent(a.n)+'" aria-label="Ocultar '+a.n+'">Ocultar</button>';
 }
 function celdaSilueta(a){
-  const dl = Math.round((a.L - REF.l)*100), dh = Math.round((a.H - REF.h)*100);
-  const txt = (dl === 0 && dh === 0) ? 'referencia'
-    : (dl >= 0 ? '+' : '') + dl + ' cm largo' + (dh !== 0 ? ' · ' + (dh > 0 ? '+' : '') + dh + ' cm alto' : '');
-  return svgPerfil(a.forma, a.L, a.H, a.WB, 15) +
-    '<div class="extra' + (dl > 0 ? '' : ' cero') + '">' + txt + '</div>';
+ return '<div class="sil">'+svgRect(a,21)+'<div class="deltas">Largo: '+delta(a.L,REF.l)+'<br>Ancho: '+delta(a.A,REF.a)+(a.anchoNota?'<br><small>'+a.anchoNota+'</small>':'')+'</div></div>';
 }
 
-const LLAVE = 'pickups-cols';
-let vis = COLS.map(() => true);
+const FILTROS_KEY='comparador-vehiculos-nuevos-filtros';
+let marca='',ocultos=new Set();
+try{const f=JSON.parse(localStorage.getItem(FILTROS_KEY));if(f){marca=typeof f.marca==='string'?f.marca:'';ocultos=new Set(Array.isArray(f.ocultos)?f.ocultos:[]);}}catch(e){}
+if(!AUTOS.some(a=>a.marca===marca))marca='';
+function visibles(){return AUTOS.filter(a=>(!marca||a.marca===marca)&&!ocultos.has(a.n));}
+function guardarFiltros(){try{localStorage.setItem(FILTROS_KEY,JSON.stringify({marca,ocultos:[...ocultos]}));}catch(e){}}
+function iniciarFiltros(){
+ const sel=document.getElementById('marca');
+ [...new Set(AUTOS.map(a=>a.marca))].sort().forEach(m=>{const o=document.createElement('option');o.value=m;o.textContent=m;sel.appendChild(o);});
+ document.getElementById('lista-modelos').innerHTML=AUTOS.map(a=>'<label><input type="checkbox" data-modelo="'+encodeURIComponent(a.n)+'" checked> '+a.n+'</label>').join('');
+ sel.addEventListener('change',()=>{marca=sel.value;guardarFiltros();render();});
+ document.getElementById('lista-modelos').addEventListener('change',e=>{const key=e.target.dataset.modelo;if(!key)return;const n=decodeURIComponent(key);e.target.checked?ocultos.delete(n):ocultos.add(n);guardarFiltros();render();});
+ document.getElementById('mostrar-todos').addEventListener('click',()=>{marca='';ocultos.clear();guardarFiltros();render();});
+ document.getElementById('ocultar-todos').addEventListener('click',()=>{AUTOS.filter(a=>!marca||a.marca===marca).forEach(a=>ocultos.add(a.n));guardarFiltros();render();});
+ document.querySelector('#tabla tbody').addEventListener('click',e=>{const b=e.target.closest('[data-ocultar]');if(b){ocultos.add(decodeURIComponent(b.dataset.ocultar));guardarFiltros();render();}});
+}
+function syncFiltros(){
+ document.getElementById('marca').value=marca;
+ document.getElementById('conteo').textContent=visibles().length+' de '+AUTOS.length+' vehículos';
+ document.querySelectorAll('[data-modelo]').forEach(el=>{const a=AUTOS.find(a=>a.n===decodeURIComponent(el.dataset.modelo));el.checked=!ocultos.has(a.n);el.closest('label').hidden=!!marca&&a.marca!==marca;});
+}
+
+const LLAVE = 'pickups-nuevos-cols';
+let vis = COLS.map((c,i) => [0,1,2,3,4,9,17,20].includes(i));
 try { const g = JSON.parse(localStorage.getItem(LLAVE)); if (Array.isArray(g) && g.length === COLS.length) vis = g; } catch(e){}
 let sortCol = null, asc = true;
 
@@ -920,14 +971,15 @@ function render(){
     ? '<th data-i="'+i+'" class="'+(c.cls||'')+(c.g?' grupo':'')+(sortCol===i?(asc?' asc':' desc'):'')+'">' +
       c.t + (c.sub ? '<small>'+c.sub+'</small>' : '') + '</th>' : '').join('');
 
-  let lista = AUTOS.slice();
+  let lista = visibles();
   if (sortCol !== null) lista.sort((x,y) => {
     const a = COLS[sortCol].v(x), b = COLS[sortCol].v(y);
     if (a == null) return b == null ? 0 : 1;
     if (b == null) return -1;
     return a < b ? (asc?-1:1) : a > b ? (asc?1:-1) : 0;
   });
-  document.querySelector('#tabla tbody').innerHTML = lista.map(filaHTML).join('');
+  document.querySelector('#tabla tbody').innerHTML = lista.length?lista.map(filaHTML).join(''):'<tr class="sin-resultados"><td colspan="'+vis.filter(Boolean).length+'">No hay vehículos seleccionados. Usa «Mostrar todos» para recuperarlos.</td></tr>';
+  syncFiltros();renderGraficos();
 
   thead.querySelectorAll('th').forEach(th => th.addEventListener('click', () => {
     const i = +th.dataset.i;
@@ -939,9 +991,9 @@ function renderChips(){
   const c = document.getElementById('chips');
   c.innerHTML = '<span class="t">Columnas:</span>' +
     Object.keys(PRESETS).map(p => '<button class="chip preset" data-p="'+p+'">'+p+'</button>').join('') +
-    '<span class="sep"></span>' +
+    '<details><summary>Elegir columnas</summary><div class="opciones-columnas">' +
     COLS.map((col,i) => i === 0 ? '' :
-      '<button class="chip'+(vis[i]?' on':'')+'" data-c="'+i+'">'+col.t+(col.sub && col.t.indexOf('$/100')===0 ? ' '+col.sub : '')+'</button>').join('');
+      '<button class="chip'+(vis[i]?' on':'')+'" data-c="'+i+'">'+col.t+(col.sub && col.t.indexOf('$/100')===0 ? ' '+col.sub : '')+'</button>').join('')+'</div></details>';
 
   c.querySelectorAll('[data-c]').forEach(b => b.addEventListener('click', () => {
     const i = +b.dataset.c;
@@ -953,40 +1005,20 @@ function renderChips(){
   }));
 }
 
-render(); renderChips();
+iniciarFiltros(); render(); renderChips();
 
-/* ---------- cajas ---------- */
-(function(){
-  const orden = AUTOS.filter(a => a.t != null).sort((a,b) => a.t - b.t);
-  const barato = orden[0], caro = orden[orden.length-1];
-  const evs = AUTOS.filter(a => a.kwh).sort((a,b) => a.t - b.t);
-  const mia = AUTOS.find(a => a.cls === 'mia');
-  const c = document.getElementById('cajas');
-  [['Menor costo entre los calculados', barato.n + ' — ' + cl(barato.t) + ' a 5 años, ' + cl(barato.mes) + ' al mes.'],
-   ['La eléctrica más razonable', evs[0].n + ' — ' + cl(evs[0].t) + ' a 5 años. Aun así, ' + cl(evs[0].t - barato.t) + ' más que la ' + barato.n.split(' ').slice(0,2).join(' ') + '.'],
-   ['Contra tu ' + mia.n.split(' ')[1], 'La RAM 700 es ' + Math.round((mia.L - REF.l)*100) + ' cm más corta que tu Škoda; las eléctricas grandes, entre 57 y 61 cm más largas que ella.'],
-   ['Mayor costo entre los calculados', caro.n + ' — ' + cl(caro.t) + '. Más del doble que la ' + barato.n.split(' ').slice(0,2).join(' ') + '.']
-  ].forEach(([t,d]) => c.insertAdjacentHTML('beforeend','<div class="caja"><b>'+t+'</b>'+d+'</div>'));
-})();
-
-/* ---------- siluetas grandes ---------- */
-(function(){
-  const c = document.getElementById('siluetas');
-  AUTOS.slice().sort((a,b) => a.L - b.L).forEach(a => {
-    const dl = Math.round((a.L-REF.l)*100), dh = Math.round((a.H-REF.h)*100);
-    const txt = (dl===0&&dh===0) ? 'la referencia'
-      : (dl>=0?'+':'')+dl+' cm largo · '+(dh>=0?'+':'')+dh+' cm alto';
-    c.insertAdjacentHTML('beforeend',
-      '<div class="fila '+(a.cls==='ref'?'r':a.cls==='mia'?'m':'')+'">' +
-      '<span class="n">'+a.n+'</span>'+svgPerfil(a.forma,a.L,a.H,a.WB,32) +
-      '<span class="v">'+txt+'</span></div>');
-  });
-})();
+function renderGraficos(){
+ const seleccion=visibles();
+ for(const id of ['cajas','siluetas','planta','tco'])document.getElementById(id).innerHTML='';
+ if(!seleccion.length){document.getElementById('cajas').innerHTML='<p class="nota">Selecciona al menos un vehículo para ver gráficos y costos.</p>';return;}
+ const orden=seleccion.slice().sort((a,b)=>a.t-b.t),barato=orden[0],corto=seleccion.slice().sort((a,b)=>a.L-b.L)[0];
+ [['Menor costo estimado de la selección',barato.n+' — '+cl(barato.t)+' en 5 años.'],['Más corto de la selección',corto.n+' — '+delta(corto.L,REF.l)+' de largo y '+delta(corto.A,REF.a)+' de ancho frente a tu Škoda.']].forEach(([t,d])=>document.getElementById('cajas').insertAdjacentHTML('beforeend','<div class="caja"><b>'+t+'</b>'+d+'</div>'));
+ seleccion.slice().sort((a,b)=>a.L-b.L).forEach(a=>document.getElementById('siluetas').insertAdjacentHTML('beforeend','<div class="fila"><span class="n">'+a.n+'</span>'+svgRect(a,40)+'<span class="v">'+m3(a.L)+' × '+m3(a.A)+' m<br>Largo: <b>'+delta(a.L,REF.l)+'</b> · Ancho: <b>'+delta(a.A,REF.a)+'</b>'+(a.anchoNota?'<br>'+a.anchoNota:'')+'</span></div>'));
 
 /* ---------- huella ---------- */
-(function(){
+{
   const c = document.getElementById('planta'), EL = 5.00, EA = 2.40, s = 22;
-  AUTOS.slice().sort((a,b) => a.L - b.L).forEach(a => {
+  seleccion.slice().sort((a,b) => a.L - b.L).forEach(a => {
     const w = EA*s+26, h = EL*s+26, sobra = Math.max(0, a.L-EL), x = (w-a.A*s)/2;
     let p = '<rect class="est" x="'+((w-EA*s)/2)+'" y="13" width="'+(EA*s)+'" height="'+(EL*s)+'" rx="2"/>' +
       '<rect class="'+(a.cls==='mia'?'automia':a.cls==='ref'?'autoref':'auto')+'" x="'+x.toFixed(1)+'" y="13" width="'+(a.A*s).toFixed(1)+'" height="'+(a.L*s).toFixed(1)+'" rx="4"/>';
@@ -995,16 +1027,15 @@ render(); renderChips();
       (sobra>0 ? 'sobresale '+Math.round(sobra*100)+' cm' : 'entra completa') +
       ' · '+Math.round((EA-a.A)*100)+' cm libres a lo ancho'+(a.anchoNota?' · '+a.anchoNota:'')+'</figcaption></figure>');
   });
-})();
+}
 
 /* ---------- TCO apilado ---------- */
-(function(){
+{
   const c = document.getElementById('tco');
-  if (AUTOS.some(a => a.t == null)) c.insertAdjacentHTML('beforeend','<p class="nota">Saveiro y los seis modelos agregados: costo total pendiente. Se excluyen de este gráfico y del ranking; N/D no equivale a cero.</p>');
-  const max = Math.max(...AUTOS.filter(a => a.t != null).map(a => a.t));
+  const max = Math.max(...seleccion.map(a => a.t));
   const cols = ['var(--c1)','var(--c2)','var(--c3)','var(--c4)','var(--c5)'];
   const et = ['Combustible','Permiso','Seguro','Mantención','Depreciación'];
-  AUTOS.filter(a => a.t != null).sort((a,b) => a.t - b.t).forEach(a => {
+  seleccion.slice().sort((a,b) => a.t - b.t).forEach(a => {
     const v = [a.e,a.p,a.s,a.m,a.d];
     const segs = v.map((x,i) => '<i style="background:'+cols[i]+';width:'+(x/a.t*100).toFixed(2)+'%" title="'+et[i]+': '+cl(x)+'"></i>').join('');
     c.insertAdjacentHTML('beforeend',
@@ -1012,7 +1043,8 @@ render(); renderChips();
       '<span class="apilada" style="flex:0 0 '+(a.t/max*66).toFixed(1)+'%">'+segs+'</span>' +
       '<span class="v">'+cl(a.t)+' · '+cl(a.mes)+'/mes</span></div>');
   });
-})();
+}
+}
 </script>
 </body>
 </html>
